@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>SIMPPANG - Buku Resep & Tutorial</title>
+    <title>SIMPPANG - Resep & Tutorial</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
@@ -12,44 +12,69 @@
     <!-- Header -->
     <header class="fixed top-0 w-full z-50 glass-header flex justify-between items-center px-6 h-20">
         <div class="flex items-center gap-3">
-            <a href="farming.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-sm text-primary">
+            <a href="farming.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface border border-outline/20 shadow-sm text-primary hover:bg-primary-fixed transition-colors">
                 <span class="material-symbols-outlined font-bold">arrow_back</span>
             </a>
             <h1 class="text-xl font-black text-primary uppercase tracking-tighter">Tutorial</h1>
         </div>
     </header>
 
-    <main class="pt-28 px-6 max-w-5xl mx-auto animate-slide-up">
-        <!-- Hero Card -->
-        <div class="app-card shadow-premium p-6 flex flex-col items-center text-center bg-primary text-white border-0 mb-8">
-            <span class="material-symbols-outlined text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">menu_book</span>
-            <h2 class="text-xs font-black uppercase tracking-widest opacity-80">Panduan Praktis</h2>
-            <p class="text-[10px] font-bold mt-2">Kumpulan Video Tutorial</p>
+    <main class="pt-28 px-6 max-w-5xl mx-auto pb-20 animate-slide-up">
+        <div class="app-card shadow-premium p-6 flex flex-col items-center text-center bg-purple-600 text-white border-0 mb-8 bg-gradient-to-br from-purple-500 to-indigo-600 relative overflow-hidden">
+            <span class="material-symbols-outlined text-4xl mb-2 z-10" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+            <h2 class="text-sm font-black uppercase tracking-widest opacity-90 z-10">Video Panduan</h2>
+            <p class="text-[10px] font-medium mt-2 z-10 opacity-80">Belajar dari Pakar & Peternak Sukses</p>
+            <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
         </div>
 
-        <!-- Video List -->
-        <div class="grid grid-cols-1 gap-6 mb-12">
-            <!-- Video 1 -->
-            <div class="app-card overflow-hidden">
-                <div class="aspect-video bg-surface-container-high flex items-center justify-center">
-                    <span class="material-symbols-outlined text-4xl text-on-surface-variant opacity-20">play_circle</span>
+        <div class="space-y-4">
+            <!-- 1. Pakan -->
+            <a href="https://www.youtube.com/results?search_query=cara+membuat+pakan+ayam+kampung+alternatif" target="_blank" class="app-card shadow-sm p-4 flex gap-4 hover:border-orange-300 group">
+                <div class="w-16 h-16 rounded-xl bg-orange-100 flex items-center justify-center text-orange-500 group-hover:scale-105 transition-transform shrink-0">
+                    <span class="material-symbols-outlined text-3xl">restaurant</span>
                 </div>
-                <div class="p-4">
-                    <h3 class="text-xs font-black uppercase tracking-tighter mb-1">1. Persiapan Brooding</h3>
-                    <p class="text-[10px] font-bold text-on-surface-variant">Cara mengatur suhu untuk DOC baru.</p>
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-sm font-black text-on-surface tracking-tighter">Manajemen Pakan</h3>
+                    <p class="text-[10px] text-on-surface-variant font-medium mt-1">Cara membuat pakan alternatif & menekan FCR.</p>
+                    <span class="text-[9px] font-black text-purple-600 uppercase mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">smart_display</span> Tonton di YouTube</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- Video 2 -->
-            <div class="app-card overflow-hidden">
-                <div class="aspect-video bg-surface-container-high flex items-center justify-center">
-                    <span class="material-symbols-outlined text-4xl text-on-surface-variant opacity-20">play_circle</span>
+            <!-- 2. Kandang -->
+            <a href="https://www.youtube.com/results?search_query=cara+membuat+kandang+ayam+bebas+bau" target="_blank" class="app-card shadow-sm p-4 flex gap-4 hover:border-amber-300 group">
+                <div class="w-16 h-16 rounded-xl bg-amber-100 flex items-center justify-center text-amber-500 group-hover:scale-105 transition-transform shrink-0">
+                    <span class="material-symbols-outlined text-3xl">home_work</span>
                 </div>
-                <div class="p-4">
-                    <h3 class="text-xs font-black uppercase tracking-tighter mb-1">2. Teknik Vaksinasi</h3>
-                    <p class="text-[10px] font-bold text-on-surface-variant">Tetes mata & air minum secara efektif.</p>
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-sm font-black text-on-surface tracking-tighter">Kandang Bebas Bau</h3>
+                    <p class="text-[10px] text-on-surface-variant font-medium mt-1">Sistem sirkulasi udara dan penggunaan sekam.</p>
+                    <span class="text-[9px] font-black text-purple-600 uppercase mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">smart_display</span> Tonton di YouTube</span>
                 </div>
-            </div>
+            </a>
+
+            <!-- 3. Jamu & Vaksin -->
+            <a href="https://www.youtube.com/results?search_query=cara+membuat+jamu+herbal+ayam+kampung" target="_blank" class="app-card shadow-sm p-4 flex gap-4 hover:border-green-300 group">
+                <div class="w-16 h-16 rounded-xl bg-green-100 flex items-center justify-center text-green-500 group-hover:scale-105 transition-transform shrink-0">
+                    <span class="material-symbols-outlined text-3xl">nature</span>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-sm font-black text-on-surface tracking-tighter">Racikan Jamu Tradisional</h3>
+                    <p class="text-[10px] text-on-surface-variant font-medium mt-1">Resep kunyit jahe untuk daya tahan tubuh.</p>
+                    <span class="text-[9px] font-black text-purple-600 uppercase mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">smart_display</span> Tonton di YouTube</span>
+                </div>
+            </a>
+            
+            <!-- 4. Sanitasi Air -->
+            <a href="https://www.youtube.com/results?search_query=sanitasi+air+minum+ayam" target="_blank" class="app-card shadow-sm p-4 flex gap-4 hover:border-blue-300 group">
+                <div class="w-16 h-16 rounded-xl bg-blue-100 flex items-center justify-center text-blue-500 group-hover:scale-105 transition-transform shrink-0">
+                    <span class="material-symbols-outlined text-3xl">water_drop</span>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-sm font-black text-on-surface tracking-tighter">Kualitas Air Minum</h3>
+                    <p class="text-[10px] text-on-surface-variant font-medium mt-1">Campuran probiotik & klorinasi yang aman.</p>
+                    <span class="text-[9px] font-black text-purple-600 uppercase mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">smart_display</span> Tonton di YouTube</span>
+                </div>
+            </a>
         </div>
     </main>
 
@@ -76,6 +101,5 @@
             <span class="text-[10px] font-black uppercase tracking-tighter">AI</span>
         </a>
     </nav>
-
 </body>
 </html>

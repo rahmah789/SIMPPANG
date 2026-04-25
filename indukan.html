@@ -20,24 +20,34 @@
     </header>
 
     <main class="pt-28 px-6 max-w-5xl mx-auto animate-slide-up">
-        <div class="app-card shadow-premium p-6">
-            <form class="space-y-6">
+        <div class="app-card shadow-premium p-6 border-secondary/20 bg-gradient-to-br from-white to-secondary-fixed/10">
+            <h2 class="text-xs font-black uppercase tracking-widest text-secondary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">edit_document</span> Pencatatan Indukan</h2>
+            <form id="indukan-form" class="space-y-4">
                 <div>
                     <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Tanggal Masuk</label>
-                    <input type="date" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0">
+                    <input type="date" id="indukan-tgl" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0">
                 </div>
                 <div>
-                    <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Jumlah (Ekor)</label>
-                    <input type="number" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0">
+                    <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Jumlah Populasi (Ekor)</label>
+                    <input type="number" id="indukan-jumlah" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="">
                 </div>
                 <div>
-                    <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Berat Rata-Rata (kg)</label>
-                    <input type="number" step="0.01" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0">
+                    <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Berat Rata-Rata per Ekor (kg)</label>
+                    <input type="number" step="0.1" id="indukan-berat" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="">
                 </div>
-                <button type="button" class="w-full bg-primary text-white font-black text-xs py-5 rounded-2xl shadow-lg active:scale-95 transition-all uppercase tracking-widest mt-4">
-                    Simpan Data
+                <button type="button" onclick="evaluasiIndukan()" class="w-full bg-secondary text-white font-black text-xs py-4 rounded-2xl shadow-lg active:scale-95 transition-all uppercase tracking-widest mt-2 hover:bg-green-800">
+                    Simpan & Evaluasi
                 </button>
             </form>
+
+            <!-- Kesimpulan Box -->
+            <div id="hasil-evaluasi" class="mt-6 p-5 rounded-2xl hidden border-2 transition-all">
+                <div class="flex items-center gap-2 mb-2">
+                    <span id="hasil-icon" class="material-symbols-outlined text-xl">info</span>
+                    <h4 class="text-xs font-black uppercase tracking-widest" id="hasil-title">Kesimpulan</h4>
+                </div>
+                <p class="text-[10px] font-bold opacity-80 leading-relaxed" id="hasil-desc">Keterangan hasil evaluasi.</p>
+            </div>
         </div>
     </main>
 
@@ -64,5 +74,46 @@
             <span class="text-[10px] font-black uppercase tracking-tighter">AI</span>
         </a>
     </nav>
+    <script>
+        function evaluasiIndukan() {
+            const tgl = document.getElementById('indukan-tgl').value;
+            const jumlah = parseInt(document.getElementById('indukan-jumlah').value) || 0;
+            const berat = parseFloat(document.getElementById('indukan-berat').value) || 0;
+            
+            const box = document.getElementById('hasil-evaluasi');
+            const title = document.getElementById('hasil-title');
+            const desc = document.getElementById('hasil-desc');
+            const icon = document.getElementById('hasil-icon');
+            
+            if(!tgl || jumlah === 0 || berat === 0) {
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-orange-400 bg-orange-50 text-orange-800";
+                icon.innerText = "warning";
+                title.innerText = "Data Belum Lengkap";
+                desc.innerText = "Harap isi tanggal, jumlah ekor, dan berat rata-rata untuk melihat kesimpulan.";
+                box.classList.remove('hidden');
+                return;
+            }
+            
+            // Evaluasi standar berat ayam indukan (idealnya 1.5 - 2.5 kg tergantung jenis kelamin)
+            if(berat >= 1.5 && berat <= 2.8) {
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-secondary bg-secondary-fixed/30 text-secondary";
+                icon.innerText = "check_circle";
+                title.innerText = "Berat Ideal Produksi";
+                desc.innerText = `Berat ${berat} kg sangat ideal untuk masa reproduksi. Pastikan asupan kalsium dari pakan cukup untuk menunjang kualitas kerabang telur.`;
+            } else if(berat < 1.5) {
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-red-500 bg-red-50 text-red-800";
+                icon.innerText = "trending_down";
+                title.innerText = "Berat Kurang (Underweight)";
+                desc.innerText = `Berat indukan ${berat} kg masih kurang. Hal ini dapat menghambat awal bertelur. Tingkatkan protein pakan menjadi 17-18%.`;
+            } else {
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-blue-500 bg-blue-50 text-blue-800";
+                icon.innerText = "warning";
+                title.innerText = "Kelebihan Lemak (Overweight)";
+                desc.innerText = `Berat ${berat} kg berisiko kegemukan (perlemakan). Indukan gemuk akan malas kawin/bertelur. Segera batasi kalori pakan dan perluas area umbaran agar sering bergerak.`;
+            }
+            
+            box.classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>

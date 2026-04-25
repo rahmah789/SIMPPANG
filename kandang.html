@@ -12,55 +12,96 @@
     <!-- Header -->
     <header class="fixed top-0 w-full z-50 glass-header flex justify-between items-center px-6 h-20">
         <div class="flex items-center gap-3">
-            <a href="farming.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-sm text-primary">
+            <a href="farming.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface border border-outline/20 shadow-sm text-primary hover:bg-primary-fixed transition-colors">
                 <span class="material-symbols-outlined font-bold">arrow_back</span>
             </a>
-            <h1 class="text-xl font-black text-primary uppercase tracking-tighter">Kandang</h1>
+            <h1 class="text-xl font-black text-primary uppercase tracking-tighter">Manajemen Kandang</h1>
         </div>
     </header>
 
     <main class="pt-28 px-6 max-w-5xl mx-auto animate-slide-up">
         <!-- Hero Card -->
-        <div class="app-card shadow-premium p-6 flex flex-col items-center text-center bg-tertiary text-white border-0 mb-8">
-            <span class="material-symbols-outlined text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">home_work</span>
-            <h2 class="text-xs font-black uppercase tracking-widest opacity-80">Protokol Kandang</h2>
-            <p class="text-[10px] font-bold mt-2">Sanitasi & Pengaturan Suhu</p>
+        <div class="app-card shadow-premium p-6 flex flex-col items-center text-center bg-tertiary text-white border-0 mb-8 bg-gradient-to-br from-amber-500 to-orange-400 relative overflow-hidden">
+            <span class="material-symbols-outlined text-4xl mb-2 z-10" style="font-variation-settings: 'FILL' 1;">home_work</span>
+            <h2 class="text-sm font-black uppercase tracking-widest opacity-90 z-10">Protokol Kandang</h2>
+            <p class="text-[10px] font-medium mt-2 z-10 opacity-80">Pencegahan, Alas, & Tips Bebas Bau</p>
+            <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
         </div>
 
-        <!-- Temperature Section -->
-        <section class="mb-10">
+        <!-- 1. Pencegahan (Suhu & Disinfektan) -->
+        <section class="mb-8 animate-slide-up" style="animation-delay: 0.1s;">
             <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-tertiary text-sm">thermostat</span> Pengaturan Suhu
+                <span class="material-symbols-outlined text-tertiary text-sm">health_and_safety</span> Pencegahan Penyakit
             </h3>
-            <div class="grid grid-cols-2 gap-3">
-                <div class="app-card p-4">
-                    <p class="text-[8px] font-black text-tertiary uppercase mb-1">Masa Brooding</p>
-                    <p class="text-xl font-black">32-33°C</p>
+            
+            <div class="app-card p-5 space-y-5 border-l-4 border-amber-500 mb-4">
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-amber-100 flex items-center justify-center text-amber-600 rounded-xl shrink-0"><span class="material-symbols-outlined text-lg">cleaning_services</span></div>
+                    <div>
+                        <h4 class="text-sm font-black text-on-surface tracking-tighter">Sanitasi Disinfektan</h4>
+                        <p class="text-xs text-on-surface-variant font-medium mt-1">Semprot area luar & dalam kandang secara rutin 2x seminggu menggunakan disinfektan komersial (seperti Antisep) sesuai dosis anjuran.</p>
+                    </div>
                 </div>
-                <div class="app-card p-4">
-                    <p class="text-[8px] font-black text-tertiary uppercase mb-1">Masa Dewasa</p>
-                    <p class="text-xl font-black">24-27°C</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div class="app-card p-4 bg-gradient-to-br from-white to-red-50 border-red-100">
+                    <p class="text-[9px] font-black text-red-500 uppercase mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">thermostat</span> Suhu DOC</p>
+                    <p class="text-xl font-black text-on-surface tracking-tighter">32-34°C</p>
+                    <p class="text-[9px] font-bold text-on-surface-variant opacity-60 mt-1">Gunakan lampu pemanas</p>
+                </div>
+                <div class="app-card p-4 bg-gradient-to-br from-white to-blue-50 border-blue-100">
+                    <p class="text-[9px] font-black text-blue-500 uppercase mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">thermostat</span> Suhu Indukan</p>
+                    <p class="text-xl font-black text-on-surface tracking-tighter">24-27°C</p>
+                    <p class="text-[9px] font-bold text-on-surface-variant opacity-60 mt-1">Jaga sirkulasi udara</p>
                 </div>
             </div>
         </section>
 
-        <!-- Sanitation Section -->
-        <section class="mb-12">
+        <!-- 2. Alas Kandang -->
+        <section class="mb-8 animate-slide-up" style="animation-delay: 0.2s;">
             <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-tertiary text-sm">sanitizer</span> Sanitasi Rutin
+                <span class="material-symbols-outlined text-secondary text-sm">layers</span> Manajemen Alas Kandang
             </h3>
-            <div class="app-card p-5 space-y-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-tertiary/10 rounded-lg flex items-center justify-center text-tertiary">
-                        <span class="material-symbols-outlined text-sm">cleaning_services</span>
-                    </div>
-                    <p class="text-[10px] font-bold">Semprot Disinfektan 2x Seminggu</p>
+            <div class="app-card shadow-sm overflow-hidden">
+                <div class="p-5">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-green-500 text-sm mt-0.5">check_circle</span>
+                            <p class="text-xs font-medium text-on-surface"><strong class="font-black">Ketebalan:</strong> Gunakan sekam padi atau serbuk gergaji dengan ketebalan 5-8 cm agar hangat dan menyerap kotoran.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-orange-500 text-sm mt-0.5">autorenew</span>
+                            <p class="text-xs font-medium text-on-surface"><strong class="font-black">Pemeliharaan:</strong> Bolak-balik sekam setiap 3 hari agar tidak menggumpal dan amonia tidak terperangkap.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-red-500 text-sm mt-0.5">warning</span>
+                            <p class="text-xs font-medium text-on-surface"><strong class="font-black">Penggantian:</strong> Segera ganti bagian alas yang basah atau sangat menggumpal dengan yang baru.</p>
+                        </li>
+                    </ul>
                 </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-tertiary/10 rounded-lg flex items-center justify-center text-tertiary">
-                        <span class="material-symbols-outlined text-sm">layers</span>
+            </div>
+        </section>
+
+        <!-- 3. Tips Kandang Bebas Bau -->
+        <section class="mb-12 animate-slide-up" style="animation-delay: 0.3s;">
+            <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-blue-500 text-sm">air</span> Tips Kandang Bebas Bau
+            </h3>
+            <div class="app-card shadow-sm p-5 border-l-4 border-blue-500 bg-blue-50/30">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs">1</div>
+                        <p class="text-xs font-medium text-on-surface">Campurkan <strong class="font-black">Probiotik (EM4 Peternakan)</strong> pada air minum ayam. Ini akan menekan bakteri pembusuk pada kotoran ayam sehingga amonia berkurang.</p>
                     </div>
-                    <p class="text-[10px] font-bold">Ganti Sekam Jika Terlalu Lembab</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs">2</div>
+                        <p class="text-xs font-medium text-on-surface">Pastikan <strong class="font-black">sirkulasi udara silang (cross-ventilation)</strong> berfungsi baik. Jangan tutup rapat seluruh kandang di siang hari yang panas.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs">3</div>
+                        <p class="text-xs font-medium text-on-surface">Gunakan atap panggung atau jarak yang cukup agar kotoran ayam cepat kering oleh angin.</p>
+                    </div>
                 </div>
             </div>
         </section>
