@@ -32,74 +32,51 @@
             <h2 class="text-3xl font-black text-primary tracking-tighter leading-tight">Optimalkan<br/>Produksi Anda</h2>
         </header>
 
-        <!-- Bento Menu Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
+        <!-- 2 Column Grid Menu -->
+        <div class="grid grid-cols-2 gap-4 mb-24">
             <!-- 1. Pencatatan -->
-            <div class="app-card shadow-premium p-6 flex flex-col justify-between min-h-[200px] relative overflow-hidden bg-gradient-to-br from-white to-primary-fixed/30 border-primary/20">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
-                <div class="w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center p-2 mb-4 z-10">
-                    <img src="ikon_pencatatan.jpg" class="w-full h-full object-contain" alt="Pencatatan">
-                </div>
-                <div class="z-10">
-                    <h3 class="text-xl font-black text-black tracking-tighter mb-4">Pencatatan</h3>
-                    <div class="flex gap-2">
-                        <a href="doc.html" class="flex-1 py-3 bg-white shadow-sm border border-primary/20 text-primary rounded-xl text-[10px] font-black uppercase tracking-widest text-center hover:bg-primary hover:text-white transition-all">🐣 DOC</a>
-                        <a href="indukan.html" class="flex-1 py-3 bg-white shadow-sm border border-secondary/20 text-secondary rounded-xl text-[10px] font-black uppercase tracking-widest text-center hover:bg-secondary hover:text-white transition-all">🐓 Indukan</a>
-                    </div>
+            <div class="app-card shadow-premium bg-gradient-to-br from-indigo-50 to-indigo-100 border-indigo-200 p-4 flex flex-col justify-center items-center text-center min-h-[160px] relative overflow-hidden group">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">📋</div>
+                <h3 class="text-sm font-black text-indigo-900 uppercase tracking-tighter">Pencatatan</h3>
+                <div class="flex gap-2 mt-3 w-full px-1">
+                    <a href="doc.html" class="flex-1 py-2 bg-white shadow-sm border border-indigo-100 rounded-lg text-[9px] font-black uppercase text-indigo-700 hover:bg-indigo-600 hover:text-white transition-all">DOC</a>
+                    <a href="indukan.html" class="flex-1 py-2 bg-white shadow-sm border border-indigo-100 rounded-lg text-[9px] font-black uppercase text-indigo-700 hover:bg-indigo-600 hover:text-white transition-all">Indukan</a>
                 </div>
             </div>
 
             <!-- 2. Pakan -->
-            <a href="pakan.html" class="app-card shadow-premium p-6 flex flex-col justify-between min-h-[200px] hover:border-secondary/40 bg-gradient-to-br from-white to-orange-50 group">
-                <div class="w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center p-2 mb-4 group-hover:-translate-y-1 transition-transform">
-                    <img src="ikon_pakan.jpg" class="w-full h-full object-contain" alt="Pakan">
-                </div>
-                <div>
-                    <h3 class="text-xl font-black text-on-surface tracking-tighter mb-1">Manajemen Pakan</h3>
-                    <p class="text-xs text-on-surface-variant font-medium mt-1">Atur takaran & stok pakan otomatis.</p>
-                </div>
+            <a href="pakan.html" class="app-card shadow-premium bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200 p-4 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">🌾</div>
+                <h3 class="text-sm font-black text-yellow-900 uppercase tracking-tighter">Pakan</h3>
+                <p class="text-[9px] text-yellow-800/70 font-bold mt-1">Takaran & stok pakan</p>
             </a>
 
             <!-- 3. Air -->
-            <a href="air.html" class="app-card shadow-premium p-6 flex flex-col justify-between min-h-[200px] hover:border-blue-400/40 bg-gradient-to-br from-white to-blue-50 group">
-                <div class="w-14 h-14 rounded-2xl bg-blue-500 text-white flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">water_drop</span>
-                </div>
-                <div>
-                    <h3 class="text-xl font-black text-on-surface tracking-tighter mb-1">Kualitas Air</h3>
-                    <p class="text-xs text-on-surface-variant font-medium mt-1">Monitoring sanitasi & suhu air.</p>
-                </div>
+            <a href="air.html" class="app-card shadow-premium bg-gradient-to-br from-cyan-50 to-cyan-100 border-cyan-200 p-4 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">💧</div>
+                <h3 class="text-sm font-black text-cyan-900 uppercase tracking-tighter">Air Minum</h3>
+                <p class="text-[9px] text-cyan-800/70 font-bold mt-1">Sanitasi & kebersihan</p>
             </a>
 
             <!-- 4. Kandang -->
-            <a href="kandang.html" class="app-card shadow-premium p-6 flex flex-col justify-between min-h-[200px] hover:border-tertiary/40 bg-gradient-to-br from-white to-amber-50 group">
-                <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center mb-4 text-3xl shadow-md group-hover:rotate-12 transition-transform">🏠</div>
-                <div>
-                    <h3 class="text-xl font-black text-on-surface tracking-tighter mb-1">Manajemen Kandang</h3>
-                    <p class="text-xs text-on-surface-variant font-medium mt-1">Pencegahan, alas, & bebas bau.</p>
-                </div>
+            <a href="kandang.html" class="app-card shadow-premium bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200 p-4 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">🏡</div>
+                <h3 class="text-sm font-black text-amber-900 uppercase tracking-tighter">Kandang</h3>
+                <p class="text-[9px] text-amber-800/70 font-bold mt-1">Pencegahan & bebas bau</p>
             </a>
 
             <!-- 5. Obat -->
-            <a href="obat.html" class="app-card shadow-premium p-6 flex flex-col justify-between min-h-[200px] hover:border-red-400/40 bg-gradient-to-br from-white to-red-50 group">
-                <div class="w-14 h-14 rounded-2xl bg-red-500 text-white flex items-center justify-center mb-4 text-3xl shadow-md group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">vaccines</span>
-                </div>
-                <div>
-                    <h3 class="text-xl font-black text-on-surface tracking-tighter mb-1">Manajemen Obat</h3>
-                    <p class="text-xs text-on-surface-variant font-medium mt-1">Pengobatan modern & tradisional (jamu).</p>
-                </div>
+            <a href="obat.html" class="app-card shadow-premium bg-gradient-to-br from-red-50 to-rose-100 border-rose-200 p-4 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">💊</div>
+                <h3 class="text-sm font-black text-rose-900 uppercase tracking-tighter">Obat & Vaksin</h3>
+                <p class="text-[9px] text-rose-800/70 font-bold mt-1">Tradisional & modern</p>
             </a>
 
             <!-- 6. Tutorial -->
-            <a href="tutorial.html" class="app-card shadow-premium p-6 flex flex-col justify-between min-h-[200px] hover:border-purple-400/40 bg-gradient-to-br from-white to-purple-50 group">
-                <div class="w-14 h-14 rounded-2xl bg-purple-500 text-white flex items-center justify-center mb-4 text-3xl shadow-md group-hover:-translate-y-1 transition-transform">
-                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                </div>
-                <div>
-                    <h3 class="text-xl font-black text-on-surface tracking-tighter mb-1">Resep & Tutorial</h3>
-                    <p class="text-xs text-on-surface-variant font-medium mt-1">Video panduan YouTube lengkap.</p>
-                </div>
+            <a href="tutorial.html" class="app-card shadow-premium bg-gradient-to-br from-fuchsia-50 to-fuchsia-100 border-fuchsia-200 p-4 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">▶️</div>
+                <h3 class="text-sm font-black text-fuchsia-900 uppercase tracking-tighter">Tutorial</h3>
+                <p class="text-[9px] text-fuchsia-800/70 font-bold mt-1">Koleksi video YouTube</p>
             </a>
         </div>
     </main>
