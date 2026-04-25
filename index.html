@@ -42,23 +42,23 @@
 
         <!-- Dynamic Summary Grid -->
         <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-            <div class="app-card shadow-premium p-4 relative overflow-hidden">
+            <div class="app-card shadow-premium p-5 relative overflow-hidden">
                 <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Populasi</p>
-                <input type="number" class="w-full bg-transparent border-0 p-0 text-sm font-black text-on-surface tracking-tighter focus:ring-0 placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                <h3 id="home-populasi" class="text-2xl font-black text-on-surface tracking-tighter">0 <span class="text-[10px] opacity-40 font-bold uppercase ml-1">Ekor</span></h3>
             </div>
-            <div class="app-card shadow-premium p-4 relative overflow-hidden">
+            <div class="app-card shadow-premium p-5 relative overflow-hidden">
                 <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Keuangan</p>
-                <input type="number" class="w-full bg-transparent border-0 p-0 text-sm font-black text-primary tracking-tighter focus:ring-0 placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                <h3 id="home-money" class="text-xl font-black text-on-surface tracking-tighter">Rp 0</h3>
                 <p class="text-[9px] font-bold text-on-surface-variant/40 uppercase mt-1">Saldo Modal</p>
             </div>
-            <div class="app-card shadow-premium p-4 relative overflow-hidden border-secondary/20">
-                <p class="text-[10px] font-black text-secondary uppercase tracking-widest mb-1">Pemasaran</p>
-                <input type="number" class="w-full bg-transparent border-0 p-0 text-sm font-black text-secondary tracking-tighter focus:ring-0 placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
-                <p class="text-[9px] font-bold text-secondary/40 uppercase mt-1">Stok Siap Jual</p>
+            <div class="app-card shadow-premium p-5 relative overflow-hidden border-secondary/20">
+                <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Pemasaran</p>
+                <h3 id="home-stock" class="text-2xl font-black text-on-surface tracking-tighter">0</h3>
+                <p class="text-[9px] font-bold text-on-surface-variant/40 uppercase mt-1">Stok Siap Jual</p>
             </div>
-            <div class="app-card shadow-premium p-4 relative overflow-hidden border-primary/30">
-                <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">HPP Real</p>
-                <input type="number" class="w-full bg-transparent border-0 p-0 text-sm font-black text-primary tracking-tighter focus:ring-0 placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+            <div class="app-card shadow-premium p-5 relative overflow-hidden border-primary/30">
+                <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">HPP Real</p>
+                <h3 id="home-hpp" class="text-xl font-black text-on-surface tracking-tighter">Rp 0</h3>
             </div>
         </section>
 
@@ -127,7 +127,25 @@
 
 
     <script>
-        // No auto-load dashboard values since user wants to input them manually
+        function loadDashboard() {
+            const financials = JSON.parse(localStorage.getItem('simppang_expenses')) || [];
+            const modal = parseInt(localStorage.getItem('simppang_modal')) || 0;
+            const popTarget = parseInt(localStorage.getItem('simppang_pop_target')) || 0;
+            const marketing = JSON.parse(localStorage.getItem('simppang_marketing')) || {};
+
+            const totalExp = financials.reduce((a, b) => a + parseInt(b.jumlah), 0);
+            const totalStock = Object.values(marketing).reduce((a, b) => a + parseInt(b.stock || 0), 0);
+            const hpp = (financials.length > 0 && popTarget > 0) ? (totalExp / popTarget) : 0;
+
+            const formatter = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+
+            // Set content to 0 by default, load if exists.
+            document.getElementById('home-populasi').innerHTML = `${popTarget} <span class="text-[10px] opacity-40 font-bold uppercase ml-1">Ekor</span>`;
+            document.getElementById('home-money').innerText = modal > 0 ? formatter.format(modal) : 'Rp 0';
+            document.getElementById('home-stock').innerText = totalStock > 0 ? totalStock : '0';
+            document.getElementById('home-hpp').innerText = hpp > 0 ? formatter.format(hpp) : 'Rp 0';
+        }
+        loadDashboard();
     </script>
 </body>
 </html>
