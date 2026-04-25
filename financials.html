@@ -108,23 +108,23 @@
     <div id="modal-modal" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-end justify-center animate-slide-up backdrop-blur-sm">
         <div class="bg-surface w-full max-w-5xl rounded-t-[32px] p-6 pb-12">
             <div class="flex justify-between items-center mb-6">
-                <h3 class="text-lg font-black text-on-surface tracking-tighter">Pengaturan Keuangan</h3>
-                <button type="button" onclick="closeModal()" class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-on-surface-variant hover:text-red-500 transition-colors">
+                <h3 class="text-2xl font-black text-slate-900 tracking-tighter">Pengaturan Keuangan</h3>
+                <button type="button" onclick="closeModal()" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-900 hover:text-red-500 transition-colors">
                     <span class="material-symbols-outlined text-sm">close</span>
                 </button>
             </div>
             <form id="form-modal" class="space-y-4">
                 <div>
-                    <label class="block text-[10px] font-black text-on-surface-variant uppercase mb-2">Modal Awal (Rp)</label>
-                    <input type="number" id="input-modal-value" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="" required>
+                    <label class="block text-xs font-black text-slate-900 uppercase mb-2 tracking-widest">Modal Awal (Rp)</label>
+                    <input type="number" id="input-modal-value" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 text-sm font-black focus:ring-2 focus:ring-primary/20 text-slate-900" placeholder="Masukkan jumlah modal.." required>
                 </div>
                 <div>
-                    <label class="block text-[10px] font-black text-on-surface-variant uppercase mb-2">Target Populasi / Panen (Ekor)</label>
-                    <input type="number" id="input-populasi-value" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="" required>
+                    <label class="block text-xs font-black text-slate-900 uppercase mb-2 tracking-widest">Target Populasi / Panen (Ekor)</label>
+                    <input type="number" id="input-populasi-value" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 text-sm font-black focus:ring-2 focus:ring-primary/20 text-slate-900" placeholder="Contoh: 100" required>
                 </div>
                 <div>
-                    <label class="block text-[10px] font-black text-on-surface-variant uppercase mb-2">Target Margin Keuntungan (%)</label>
-                    <input type="number" id="input-margin-value" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="Misal: 25" value="25" required>
+                    <label class="block text-xs font-black text-slate-900 uppercase mb-2 tracking-widest">Target Margin Keuntungan (%)</label>
+                    <input type="number" id="input-margin-value" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 text-sm font-black focus:ring-2 focus:ring-primary/20 text-slate-900" placeholder="Misal: 25" value="25" required>
                 </div>
                 <button type="submit" class="w-full bg-primary text-white font-black text-xs py-4 rounded-2xl shadow-lg active:scale-95 transition-all uppercase tracking-widest mt-4 hover:bg-green-800">
                     Simpan Pengaturan
