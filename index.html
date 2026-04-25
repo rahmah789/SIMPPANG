@@ -36,7 +36,7 @@
         <section class="mb-10">
             <p class="text-[10px] font-black text-secondary uppercase tracking-[0.2em] mb-2">Dashboard Utama</p>
             <h1 class="text-4xl font-black text-primary tracking-tighter leading-tight">Halo,<br/>Peternak Belitang!</h1>
-            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed max-w-lg font-medium">Selamat datang di SIMPPANG. Aplikasi ini dirancang agar peternak pemula dapat dengan mudah memahami, mencatat pemeliharaan, serta memantau keuangan dan pemasaran secara teratur.</p>
+            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed max-w-lg font-medium">Selamat datang! Aplikasi ini dibuat khusus untuk mempermudah Anda mencatat perkembangan ayam, mengatur keuangan, dan memantau stok dengan cara yang rapi dan teratur.</p>
             <div class="h-1 w-12 bg-secondary mt-5 rounded-full"></div>
         </section>
 
@@ -59,9 +59,7 @@
             <div class="app-card shadow-premium p-5 relative overflow-hidden border-primary/30">
                 <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">HPP Real</p>
                 <h3 id="home-hpp" class="text-xl font-black text-primary tracking-tighter">Rp 0</h3>
-                <div class="absolute -right-3 -bottom-3 opacity-10 text-primary">
-                    <span class="material-symbols-outlined text-[64px]">calculate</span>
-                </div>
+                    <span class="material-symbols-outlined text-[64px]"></span>
             </div>
         </section>
 
@@ -73,62 +71,35 @@
             <div class="h-[1px] flex-1 bg-outline/20 ml-4"></div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+        <div class="grid grid-cols-2 gap-4 mb-24">
             <!-- Pakan & Air -->
-            <a href="farming.html" class="md:col-span-2 group app-card shadow-premium p-8 flex flex-col justify-between min-h-[200px] hover:border-primary/40">
-                <div class="flex justify-between items-start">
-                    <div class="w-14 h-14 bg-primary-fixed/30 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform shadow-sm">🥣</div>
-                    <span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors">arrow_outward</span>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-black text-on-surface uppercase tracking-tighter">Pemeliharaan</h3>
-                    <p class="text-xs text-on-surface-variant font-medium mt-1">Atur pakan, air, dan kesehatan ternak harian.</p>
-                </div>
+            <a href="farming.html" class="app-card shadow-premium bg-gradient-to-br from-green-50 to-green-100 border-green-200 p-5 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">🚜</div>
+                <h3 class="text-sm font-black text-green-900 uppercase tracking-tighter">Pemeliharaan</h3>
+                <p class="text-[9px] text-green-800/70 font-bold mt-1">Catat harian & kandang</p>
             </a>
             
             <!-- Keuangan -->
-            <a href="financials.html" class="app-card shadow-premium bg-secondary-fixed/20 p-8 flex flex-col justify-between min-h-[200px] hover:bg-secondary-fixed/40 group">
-                <div class="flex justify-between items-start">
-                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:rotate-12 transition-transform">💸</div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-black text-on-surface uppercase tracking-tighter">Keuangan</h3>
-                    <p class="text-[11px] text-on-surface-variant font-medium mt-1">Lacak modal & operasional.</p>
-                </div>
+            <a href="financials.html" class="app-card shadow-premium bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-5 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">💰</div>
+                <h3 class="text-sm font-black text-blue-900 uppercase tracking-tighter">Keuangan</h3>
+                <p class="text-[9px] text-blue-800/70 font-bold mt-1">Modal, HPP & untung</p>
             </a>
 
             <!-- Pemasaran -->
-            <a href="marketing.html" class="app-card shadow-premium p-8 flex flex-col justify-between min-h-[200px] hover:border-secondary/40 group">
-                <div class="flex justify-between items-start">
-                    <div class="w-14 h-14 bg-secondary-fixed/30 rounded-2xl flex items-center justify-center text-3xl group-hover:-translate-y-2 transition-transform shadow-sm">🍗</div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-black text-on-surface uppercase tracking-tighter">Pasar & Stok</h3>
-                    <p class="text-[11px] text-on-surface-variant font-medium mt-1">Penjualan & harga pasar Belitang.</p>
-                </div>
+            <a href="marketing.html" class="app-card shadow-premium bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200 p-5 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">🏪</div>
+                <h3 class="text-sm font-black text-orange-900 uppercase tracking-tighter">Pemasaran</h3>
+                <p class="text-[9px] text-orange-800/70 font-bold mt-1">Stok & transaksi</p>
             </a>
 
             <!-- Asisten -->
-            <a href="asisten.html" class="md:col-span-2 bg-primary p-8 rounded-[32px] flex flex-col justify-between min-h-[200px] shadow-premium hover:opacity-95 items-start relative overflow-hidden active:scale-95 transition-all">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
-                <div class="flex justify-between items-start w-full z-10">
-                    <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl backdrop-blur-md">🤖</div>
-                    <div class="bg-white/20 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest backdrop-blur-md">Si-Pang AI</div>
-                </div>
-                <div class="z-10">
-                    <h3 class="text-2xl font-black text-black uppercase tracking-tighter">Asisten AI</h3>
-                    <p class="text-xs text-white opacity-90 font-normal mt-1 italic">Tanya solusi masalah kandang sekarang.</p>
-                </div>
+            <a href="asisten.html" class="app-card shadow-premium bg-gradient-to-br from-primary to-purple-600 p-5 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden text-white border-0">
+                <div class="absolute -right-4 -top-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">🤖</div>
+                <h3 class="text-sm font-black uppercase tracking-tighter">Asisten AI</h3>
+                <p class="text-[9px] text-white/80 font-medium mt-1 italic leading-tight">Tanya solusi masalah ternakmu di sini!</p>
             </a>
-        </div>
-
-        <!-- System Summary -->
-        <div class="bg-white border-2 border-dashed border-outline/30 text-center p-8 rounded-[32px] mb-12">
-            <div class="w-12 h-12 bg-primary-fixed/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
-            </div>
-            <h4 class="text-xs font-black text-on-surface uppercase tracking-widest mb-1">SIMPPANG Core v2.0</h4>
-            <p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest opacity-60">Status: Sistem Aktif & Terenkripsi</p>
         </div>
     </main>
 
