@@ -5,6 +5,25 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>SIMPPANG - Manajemen Pakan</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#204e2b',
+                        secondary: '#944925',
+                        'primary-fixed': '#bcefc0',
+                        'secondary-fixed': '#ffdbcd',
+                        surface: '#ffffff',
+                        'on-surface': '#1b1c1a',
+                        'on-surface-variant': '#475569',
+                        background: '#fbf9f6',
+                        outline: '#c1c9be'
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -49,7 +68,7 @@
                     <input type="hidden" id="jenis-ayam" value="doc">
                     <div>
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Jumlah Populasi (Ekor)</label>
-                        <input type="number" id="jumlah-ekor" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="">
+                        <input type="number" id="jumlah-ekor" oninput="updateTabelPakan()" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="Contoh: 100" value="100">
                     </div>
                     <div>
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Harga Jual Ayam / Ekor (Rp)</label>
@@ -95,34 +114,24 @@
         <div class="app-card shadow-premium overflow-hidden border-0 mb-10">
             <div class="px-5 py-4 border-b border-outline/10 bg-surface-container-low">
                 <h3 class="text-[10px] font-black text-on-surface uppercase tracking-widest flex items-center gap-2">
-                    <span class="material-symbols-outlined text-sm">table_chart</span> Standar Kebutuhan Pakan (100 Ekor)
+                    <span class="material-symbols-outlined text-sm">table_chart</span> Standar Kebutuhan Pakan (<span id="display-pop-pakan">100</span> Ekor)
                 </h3>
             </div>
             <table class="w-full text-[10px] text-left">
                 <thead class="bg-surface-container-high text-on-surface font-black uppercase tracking-widest">
                     <tr>
                         <th class="px-4 py-3">Umur (Minggu)</th>
-                        <th class="px-4 py-3 text-center">gr / hari</th>
-                        <th class="px-4 py-3 text-right">kg / hari</th>
+                        <th class="px-4 py-3 text-center">gr / hari (per ekor)</th>
+                        <th class="px-4 py-3 text-right">kg / hari (total)</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-outline/5">
-                    <tr class="bg-primary/5"><td colspan="3" class="px-4 py-2 font-black text-primary uppercase tracking-widest text-[8px]">Masa Brooding</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">0 - 1</td><td class="px-4 py-3 text-center">10</td><td class="px-4 py-3 text-right font-black">1.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">1 - 2</td><td class="px-4 py-3 text-center">15</td><td class="px-4 py-3 text-right font-black">1.5</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">2 - 3</td><td class="px-4 py-3 text-center">20</td><td class="px-4 py-3 text-right font-black">2.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">3 - 4</td><td class="px-4 py-3 text-center">25</td><td class="px-4 py-3 text-right font-black">2.5</td></tr>
-                    
-                    <tr class="bg-secondary/5"><td colspan="3" class="px-4 py-2 font-black text-secondary uppercase tracking-widest text-[8px]">Pembesaran</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">4 - 5</td><td class="px-4 py-3 text-center">30</td><td class="px-4 py-3 text-right font-black">3.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">5 - 6</td><td class="px-4 py-3 text-center">40</td><td class="px-4 py-3 text-right font-black">4.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">6 - 7</td><td class="px-4 py-3 text-center">50</td><td class="px-4 py-3 text-right font-black">5.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">7 - 8</td><td class="px-4 py-3 text-center">70</td><td class="px-4 py-3 text-right font-black">7.0</td></tr>
+                <tbody id="tabel-pakan-body" class="divide-y divide-outline/5">
+                    <!-- Dynamic Rows -->
                 </tbody>
                 <tfoot class="bg-green-800 text-white font-black uppercase tracking-widest text-[10px]">
                     <tr>
-                        <td colspan="2" class="px-4 py-4 text-right">Total Pakan (63 Hari):</td>
-                        <td class="px-4 py-4 text-right text-sm">245 kg</td>
+                        <td colspan="2" class="px-4 py-4 text-right">Total Pakan (8 Minggu):</td>
+                        <td id="total-pakan-kg" class="px-4 py-4 text-right text-sm">245 kg</td>
                     </tr>
                 </tfoot>
             </table>
@@ -209,6 +218,57 @@
             }
             box.classList.remove('hidden');
         }
+
+        const standarPakan = [
+            { minggu: "0 - 1", gr: 10, cat: "Brooding" },
+            { minggu: "1 - 2", gr: 15, cat: "Brooding" },
+            { minggu: "2 - 3", gr: 20, cat: "Brooding" },
+            { minggu: "3 - 4", gr: 25, cat: "Brooding" },
+            { minggu: "4 - 5", gr: 30, cat: "Besar" },
+            { minggu: "5 - 6", gr: 40, cat: "Besar" },
+            { minggu: "6 - 7", gr: 50, cat: "Besar" },
+            { minggu: "7 - 8", gr: 70, cat: "Besar" }
+        ];
+
+        function updateTabelPakan() {
+            const populasi = parseFloat(document.getElementById('jumlah-ekor').value) || 0;
+            const displayEl = document.getElementById('display-pop-pakan');
+            if(displayEl) displayEl.innerText = populasi;
+            
+            const tbody = document.getElementById('tabel-pakan-body');
+            if(!tbody) return;
+
+            let totalKg = 0;
+            let currentCat = "";
+            
+            let html = "";
+            standarPakan.forEach(s => {
+                if(s.cat !== currentCat) {
+                    currentCat = s.cat;
+                    const catName = s.cat === "Brooding" ? "Masa Brooding" : "Pembesaran";
+                    const catClass = s.cat === "Brooding" ? "bg-primary/5 text-primary" : "bg-secondary/5 text-secondary";
+                    html += `<tr class="${catClass}"><td colspan="3" class="px-4 py-2 font-black uppercase tracking-widest text-[8px]">${catName}</td></tr>`;
+                }
+                
+                const kgHari = (populasi * s.gr) / 1000;
+                totalKg += (kgHari * 7);
+                
+                html += `
+                    <tr class="font-medium text-on-surface">
+                        <td class="px-4 py-3">${s.minggu}</td>
+                        <td class="px-4 py-3 text-center">${s.gr} gr</td>
+                        <td class="px-4 py-3 text-right font-black">${kgHari.toFixed(1)} kg</td>
+                    </tr>
+                `;
+            });
+            
+            tbody.innerHTML = html;
+            const totalEl = document.getElementById('total-pakan-kg');
+            if(totalEl) totalEl.innerText = totalKg.toFixed(1) + " kg";
+        }
+
+        // Initialize table
+        updateTabelPakan();
     </script>
 </body>
 </html>
