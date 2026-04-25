@@ -43,11 +43,11 @@
                 <div class="flex gap-2">
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Butir</label>
-                        <input type="number" id="price-telur" onchange="updateMarketing('telur')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" value="2500">
+                        <input type="number" id="price-telur" onchange="updateMarketing('telur')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
                     </div>
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
-                        <input type="number" id="stock-telur" onchange="updateMarketing('telur')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" value="0">
+                        <input type="number" id="stock-telur" onchange="updateMarketing('telur')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="0">
                     </div>
                 </div>
             </div>
@@ -64,11 +64,11 @@
                 <div class="flex gap-2">
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Ekor</label>
-                        <input type="number" id="price-doc" onchange="updateMarketing('doc')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" value="8500">
+                        <input type="number" id="price-doc" onchange="updateMarketing('doc')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
                     </div>
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
-                        <input type="number" id="stock-doc" onchange="updateMarketing('doc')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" value="0">
+                        <input type="number" id="stock-doc" onchange="updateMarketing('doc')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="0">
                     </div>
                 </div>
             </div>
@@ -85,11 +85,11 @@
                 <div class="flex gap-2">
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Ekor</label>
-                        <input type="number" id="price-indukan" onchange="updateMarketing('indukan')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" value="75000">
+                        <input type="number" id="price-indukan" onchange="updateMarketing('indukan')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
                     </div>
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
-                        <input type="number" id="stock-indukan" onchange="updateMarketing('indukan')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" value="0">
+                        <input type="number" id="stock-indukan" onchange="updateMarketing('indukan')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="0">
                     </div>
                 </div>
             </div>
@@ -106,11 +106,11 @@
                 <div class="flex gap-2">
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Kg</label>
-                        <input type="number" id="price-daging" onchange="updateMarketing('daging')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" placeholder="0">
+                        <input type="number" id="price-daging" onchange="updateMarketing('daging')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
                     </div>
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
-                        <input type="number" id="stock-daging" onchange="updateMarketing('daging')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" placeholder="0">
+                        <input type="number" id="stock-daging" onchange="updateMarketing('daging')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="0">
                     </div>
                 </div>
             </div>
@@ -155,62 +155,75 @@
             </div>
         </section>
 
-        <!-- Social Media Section -->
-        <section class="mb-12">
-            <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-sm">share</span> Link Komunitas
+        <!-- Pembayaran & Verifikasi -->
+        <section class="mb-24">
+            <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-sm">verified</span> Verifikasi Transaksi Pembayaran
             </h3>
-            <div class="grid grid-cols-2 gap-3">
-                <div class="app-card p-4 flex flex-col gap-2">
-                    <p class="text-[8px] font-black text-pink-500 uppercase">Instagram</p>
-                    <input type="text" id="link-ig" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold">
-                </div>
-                <div class="app-card p-4 flex flex-col gap-2">
-                    <p class="text-[8px] font-black text-blue-600 uppercase">WhatsApp</p>
-                    <input type="text" id="link-wa" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold">
-                </div>
-                <div class="app-card p-4 flex flex-col gap-2">
-                    <p class="text-[8px] font-black text-blue-800 uppercase">Facebook</p>
-                    <input type="text" id="link-fb" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold">
-                </div>
-                <div class="app-card p-4 flex flex-col gap-2">
-                    <p class="text-[8px] font-black text-black uppercase">TikTok</p>
-                    <input type="text" id="link-tiktok" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold">
+            
+            <div class="app-card shadow-premium p-6 border-primary/20 bg-gradient-to-br from-white to-primary-fixed/10">
+                <form id="transaksi-form" class="space-y-6">
+                    
+                    <!-- Data Penjual -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black uppercase text-secondary border-b pb-2">Identitas Penjual</h4>
+                        <div>
+                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Nama Toko/Peternak</label>
+                            <input type="text" id="trx-seller-name" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-sm font-black placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        </div>
+                        <div>
+                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">No HP/WA & Rekening (Penjual)</label>
+                            <input type="text" id="trx-seller-contact" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-sm font-black placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        </div>
+                        <div>
+                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Alamat Penjual</label>
+                            <textarea id="trx-seller-address" rows="2" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-sm font-black placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input.."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Data Pembeli -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black uppercase text-secondary border-b pb-2">Identitas Pembeli</h4>
+                        <div>
+                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Nama Pembeli</label>
+                            <input type="text" id="trx-buyer-name" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-sm font-black placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        </div>
+                        <div>
+                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">No HP/WA Pembeli</label>
+                            <input type="text" id="trx-buyer-contact" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-sm font-black placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        </div>
+                        <div>
+                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Alamat Pengiriman (Pembeli)</label>
+                            <textarea id="trx-buyer-address" rows="2" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-sm font-black placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input.."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Data Transaksi -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black uppercase text-secondary border-b pb-2">Detail Pembayaran</h4>
+                        <div>
+                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga Kesepakatan (Rp)</label>
+                            <input type="number" id="trx-price" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-sm font-black placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="evaluasiTransaksi()" class="w-full bg-primary text-white font-black text-xs py-4 rounded-2xl shadow-lg active:scale-95 transition-all uppercase tracking-widest mt-2 hover:bg-green-800">
+                        Verifikasi Transaksi
+                    </button>
+                </form>
+
+                <!-- Kesimpulan Box -->
+                <div id="hasil-evaluasi" class="mt-6 p-5 rounded-2xl hidden border-2 transition-all">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span id="hasil-icon" class="material-symbols-outlined text-xl">info</span>
+                        <h4 class="text-xs font-black uppercase tracking-widest" id="hasil-title">Kesimpulan Verifikasi</h4>
+                    </div>
+                    <p class="text-[10px] font-bold opacity-80 leading-relaxed" id="hasil-desc">Keterangan hasil evaluasi.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 4. Modal Pembayaran & Identitas -->
-    <div id="modal-pembayaran" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm hidden flex items-end sm:items-center justify-center transition-opacity">
-        <div class="bg-surface w-full sm:w-96 rounded-t-[32px] sm:rounded-[32px] p-6 shadow-premium h-[85vh] overflow-y-auto no-scrollbar">
-            <div class="flex justify-between items-center mb-6">
-                <div>
-                    <h3 class="text-xl font-black text-primary tracking-tighter">Profil & Pembayaran</h3>
-                    <p class="text-[10px] text-on-surface-variant font-bold uppercase">Verifikasi Penjual</p>
-                </div>
-                <button onclick="closeModal()" class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded-full text-on-surface-variant">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            
-            <form id="form-seller" class="space-y-4">
-                <div class="space-y-3 border-b border-outline/20 pb-4">
-                    <h4 class="text-xs font-black uppercase text-secondary">Identitas Toko</h4>
-                    <input type="text" id="seller-name" placeholder="Nama Peternak / Toko" class="w-full p-3 rounded-xl border border-outline/50 text-sm font-bold bg-background">
-                    <textarea id="seller-address" placeholder="Alamat Lengkap" rows="2" class="w-full p-3 rounded-xl border border-outline/50 text-sm font-bold bg-background"></textarea>
-                </div>
-                <div class="space-y-3 border-b border-outline/20 pb-4">
-                    <h4 class="text-xs font-black uppercase text-secondary">Kontak & Rekening</h4>
-                    <input type="tel" id="seller-phone" placeholder="No HP/WA" class="w-full p-3 rounded-xl border border-outline/50 text-sm font-bold bg-background">
-                    <input type="text" id="seller-bank" placeholder="BCA 123456789 a.n Budi" class="w-full p-3 rounded-xl border border-outline/50 text-sm font-bold bg-background">
-                </div>
-                <button type="submit" class="w-full py-4 bg-primary text-white rounded-2xl font-black uppercase tracking-widest shadow-premium mt-4">
-                    Simpan Profil
-                </button>
-            </form>
-        </div>
-    </div>
 
     <!-- Global Nav -->
     <nav class="fixed bottom-0 left-0 w-full z-40 glass-nav flex justify-around items-center px-4 pb-8 pt-4">
@@ -240,66 +253,60 @@
     const types = ['telur', 'doc', 'indukan', 'daging'];
     
     function loadMarketing() {
-        const data = JSON.parse(localStorage.getItem('simppang_marketing')) || {};
-        const links = JSON.parse(localStorage.getItem('simppang_links')) || {};
-        const seller = JSON.parse(localStorage.getItem('simppang_seller')) || {};
-
+        // Clear all initial values to conform with "datanya kosongkan semua" rule
         types.forEach(t => {
-            if(data[t]) {
-                const pEl = document.getElementById(`price-${t}`);
-                const sEl = document.getElementById(`stock-${t}`);
-                if(pEl) pEl.value = data[t].price;
-                if(sEl) sEl.value = data[t].stock;
-            }
-        });
-
-        const ids = ['ig', 'fb', 'tiktok', 'wa'];
-        ids.forEach(id => {
-            const el = document.getElementById(`link-${id}`);
-            if(el) el.value = links[id] || '';
-        });
-
-        const sellerIds = ['name', 'address', 'phone', 'bank'];
-        sellerIds.forEach(id => {
-            const el = document.getElementById(`seller-${id}`);
-            if(el) el.value = seller[id] || '';
+            const pEl = document.getElementById(`price-${t}`);
+            const sEl = document.getElementById(`stock-${t}`);
+            if(pEl) pEl.value = "";
+            if(sEl) sEl.value = "";
         });
     }
 
     function updateMarketing(type) {
-        const data = JSON.parse(localStorage.getItem('simppang_marketing')) || {};
-        data[type] = {
-            price: document.getElementById(`price-${type}`).value,
-            stock: document.getElementById(`stock-${type}`).value
-        };
-        localStorage.setItem('simppang_marketing', JSON.stringify(data));
+        // Do nothing for now to keep it clean
     }
 
-    function updateLinks() {
-        const links = {
-            ig: document.getElementById('link-ig').value,
-            fb: document.getElementById('link-fb').value,
-            tiktok: document.getElementById('link-tiktok').value,
-            wa: document.getElementById('link-wa').value
-        };
-        localStorage.setItem('simppang_links', JSON.stringify(links));
-    }
+    function evaluasiTransaksi() {
+        const sName = document.getElementById('trx-seller-name').value;
+        const sContact = document.getElementById('trx-seller-contact').value;
+        const sAddr = document.getElementById('trx-seller-address').value;
+        
+        const bName = document.getElementById('trx-buyer-name').value;
+        const bContact = document.getElementById('trx-buyer-contact').value;
+        const bAddr = document.getElementById('trx-buyer-address').value;
+        
+        const price = document.getElementById('trx-price').value;
+        
+        const box = document.getElementById('hasil-evaluasi');
+        const title = document.getElementById('hasil-title');
+        const desc = document.getElementById('hasil-desc');
+        const icon = document.getElementById('hasil-icon');
+        
+        if(!sName || !sContact || !sAddr || !bName || !bContact || !bAddr || !price) {
+            box.className = "mt-6 p-5 rounded-2xl border-2 border-orange-400 bg-orange-50 text-orange-800";
+            icon.innerText = "warning";
+            title.innerText = "Data Belum Lengkap";
+            desc.innerText = "Harap isi semua informasi identitas penjual, identitas pembeli, dan nominal pembayaran untuk melakukan verifikasi transaksi.";
+            box.classList.remove('hidden');
+            return;
+        }
 
-    document.getElementById('form-seller').onsubmit = (e) => {
-        e.preventDefault();
-        const seller = {
-            name: document.getElementById('seller-name').value,
-            address: document.getElementById('seller-address').value,
-            phone: document.getElementById('seller-phone').value,
-            bank: document.getElementById('seller-bank').value
-        };
-        localStorage.setItem('simppang_seller', JSON.stringify(seller));
-        alert("Profil disimpan!");
-        closeModal();
-    }
+        // Format to currency if valid number
+        const priceNum = parseInt(price) || 0;
+        const formatter = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+        const formattedPrice = priceNum > 0 ? formatter.format(priceNum) : `Rp ${price}`;
 
-    function openTab() { document.getElementById('modal-pembayaran').classList.remove('hidden'); }
-    function closeModal() { document.getElementById('modal-pembayaran').classList.add('hidden'); }
+        box.className = "mt-6 p-5 rounded-2xl border-2 border-primary bg-primary-fixed/30 text-primary";
+        icon.innerText = "verified";
+        title.innerText = "Transaksi Siap Dilanjutkan";
+        desc.innerHTML = `Identitas telah diverifikasi.<br><br>
+        <strong>Saran Tindakan:</strong><br>
+        1. Pastikan pembeli (<strong>${bName}</strong>) mentransfer dana sebesar <strong>${formattedPrice}</strong> ke rekening Anda (<strong>${sContact}</strong>).<br>
+        2. Jangan lakukan pengiriman barang ke alamat pembeli (<em>${bAddr}</em>) sebelum dana masuk dan tervalidasi.<br>
+        3. Jika memungkinkan, gunakan layanan logistik yang memberikan resi valid.`;
+        
+        box.classList.remove('hidden');
+    }
 
     loadMarketing();
 </script>
