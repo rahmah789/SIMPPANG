@@ -71,7 +71,7 @@
             
             <!-- Tabs -->
             <div class="flex gap-2 mb-4">
-                <button type="button" onclick="setTab('doc')" id="tab-doc" class="flex-1 py-3 bg-primary text-white rounded-xl text-[10px] font-black uppercase tracking-widest text-center shadow-sm transition-all">🐣 DOC / Pedaging</button>
+                <button type="button" onclick="setTab('doc')" id="tab-doc" class="flex-1 py-3 bg-white border-2 border-primary text-primary rounded-xl text-[10px] font-black uppercase tracking-widest text-center shadow-sm transition-all">🐣 DOC / Pedaging</button>
                 <button type="button" onclick="setTab('indukan')" id="tab-indukan" class="flex-1 py-3 bg-surface border border-outline/20 text-on-surface-variant rounded-xl text-[10px] font-black uppercase tracking-widest text-center transition-all hover:bg-surface-container-low">🐓 Indukan</button>
             </div>
 
@@ -152,10 +152,10 @@
         function setTab(tab) {
             document.getElementById('jenis-ayam').value = tab;
             if(tab === 'doc') {
-                document.getElementById('tab-doc').className = 'flex-1 py-3 bg-primary text-white rounded-xl text-[10px] font-black uppercase tracking-widest text-center shadow-sm transition-all';
+                document.getElementById('tab-doc').className = 'flex-1 py-3 bg-white border-2 border-primary text-primary rounded-xl text-[10px] font-black uppercase tracking-widest text-center shadow-sm transition-all';
                 document.getElementById('tab-indukan').className = 'flex-1 py-3 bg-surface border border-outline/20 text-on-surface-variant rounded-xl text-[10px] font-black uppercase tracking-widest text-center transition-all hover:bg-surface-container-low';
             } else {
-                document.getElementById('tab-indukan').className = 'flex-1 py-3 bg-secondary text-white rounded-xl text-[10px] font-black uppercase tracking-widest text-center shadow-sm transition-all';
+                document.getElementById('tab-indukan').className = 'flex-1 py-3 bg-white border-2 border-primary text-primary rounded-xl text-[10px] font-black uppercase tracking-widest text-center shadow-sm transition-all';
                 document.getElementById('tab-doc').className = 'flex-1 py-3 bg-surface border border-outline/20 text-on-surface-variant rounded-xl text-[10px] font-black uppercase tracking-widest text-center transition-all hover:bg-surface-container-low';
             }
         }
@@ -173,8 +173,8 @@
             const icon = document.getElementById('hasil-icon');
             
             if(jumlah === 0 || hargaAyam === 0 || hargaPakan === 0) {
-                box.className = "mt-6 p-5 rounded-2xl border-2 border-orange-400 bg-orange-50 text-orange-800";
-                icon.innerText = "warning";
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-black/20 bg-surface text-on-surface";
+                icon.innerText = "info";
                 title.innerText = "Data Belum Lengkap";
                 desc.innerText = "Harap isi jumlah ayam, harga jual per ekor, dan total biaya pakan untuk melihat kesimpulan.";
                 box.classList.remove('hidden');
