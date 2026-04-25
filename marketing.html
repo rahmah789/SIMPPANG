@@ -43,7 +43,7 @@
                 <div class="flex gap-2">
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Butir</label>
-                        <input type="number" id="price-telur" onchange="updateMarketing('telur')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        <input type="number" id="price-telur" onchange="updateMarketing('telur')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="0">
                     </div>
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
@@ -64,7 +64,7 @@
                 <div class="flex gap-2">
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Ekor</label>
-                        <input type="number" id="price-doc" onchange="updateMarketing('doc')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        <input type="number" id="price-doc" onchange="updateMarketing('doc')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="0">
                     </div>
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
@@ -85,7 +85,7 @@
                 <div class="flex gap-2">
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Ekor</label>
-                        <input type="number" id="price-indukan" onchange="updateMarketing('indukan')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        <input type="number" id="price-indukan" onchange="updateMarketing('indukan')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="0">
                     </div>
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
@@ -106,7 +106,7 @@
                 <div class="flex gap-2">
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Kg</label>
-                        <input type="number" id="price-daging" onchange="updateMarketing('daging')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                        <input type="number" id="price-daging" onchange="updateMarketing('daging')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="0">
                     </div>
                     <div class="text-right">
                         <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
@@ -257,7 +257,7 @@
         types.forEach(t => {
             const pEl = document.getElementById(`price-${t}`);
             const sEl = document.getElementById(`stock-${t}`);
-            if(pEl) pEl.value = "";
+            if(pEl) pEl.value = "0";
             if(sEl) sEl.value = "0";
         });
     }
