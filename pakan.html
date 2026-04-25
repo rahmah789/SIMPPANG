@@ -22,48 +22,16 @@
     <main class="pt-28 px-6 max-w-5xl mx-auto animate-slide-up">
         <!-- Info Card -->
         <div class="app-card shadow-premium p-6 flex items-center gap-4 mb-8">
-            <div class="w-14 h-14 bg-secondary-fixed/30 rounded-2xl flex items-center justify-center">
-                <img src="ikon_pakan.jpg" class="w-full h-full object-contain p-1" alt="Pakan">
+            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                🥣
             </div>
             <div>
-                <h2 class="text-sm font-black text-on-surface uppercase tracking-tighter">Standar Harian</h2>
-                <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Basis 100 Ekor Ayam</p>
+                <h2 class="text-sm font-black text-on-surface uppercase tracking-tighter">Manajemen Pakan</h2>
+                <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Evaluasi & Standar Harian</p>
             </div>
         </div>
 
-        <!-- Table -->
-        <div class="app-card shadow-premium overflow-hidden border-0 mb-10">
-            <table class="w-full text-[10px] text-left">
-                <thead class="bg-surface-container-high text-on-surface font-black uppercase tracking-widest">
-                    <tr>
-                        <th class="px-4 py-3">Umur (Minggu)</th>
-                        <th class="px-4 py-3 text-center">gr / hari</th>
-                        <th class="px-4 py-3 text-right">kg / hari</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-outline/5">
-                    <tr class="bg-primary/5"><td colspan="3" class="px-4 py-2 font-black text-primary uppercase tracking-widest text-[8px]">Masa Brooding</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">0 - 1</td><td class="px-4 py-3 text-center">10</td><td class="px-4 py-3 text-right font-black">1.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">1 - 2</td><td class="px-4 py-3 text-center">15</td><td class="px-4 py-3 text-right font-black">1.5</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">2 - 3</td><td class="px-4 py-3 text-center">20</td><td class="px-4 py-3 text-right font-black">2.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">3 - 4</td><td class="px-4 py-3 text-center">25</td><td class="px-4 py-3 text-right font-black">2.5</td></tr>
-                    
-                    <tr class="bg-secondary/5"><td colspan="3" class="px-4 py-2 font-black text-secondary uppercase tracking-widest text-[8px]">Pembesaran</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">4 - 5</td><td class="px-4 py-3 text-center">30</td><td class="px-4 py-3 text-right font-black">3.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">5 - 6</td><td class="px-4 py-3 text-center">40</td><td class="px-4 py-3 text-right font-black">4.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">6 - 7</td><td class="px-4 py-3 text-center">50</td><td class="px-4 py-3 text-right font-black">5.0</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">7 - 8</td><td class="px-4 py-3 text-center">70</td><td class="px-4 py-3 text-right font-black">7.0</td></tr>
-                </tbody>
-                <tfoot class="bg-primary text-white font-black uppercase tracking-widest text-[10px]">
-                    <tr>
-                        <td colspan="2" class="px-4 py-4 text-right">Total Pakan (63 Hari):</td>
-                        <td class="px-4 py-4 text-right text-sm">245 kg</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-
-        <!-- Calculator Section -->
+        <!-- Calculator Section (Sekarang di atas) -->
         <div class="mb-10 animate-slide-up" style="animation-delay: 0.1s;">
             <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary text-sm">calculate</span> Evaluasi Manajemen Pakan
@@ -121,6 +89,43 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Table (Sekarang di bawah) -->
+        <div class="app-card shadow-premium overflow-hidden border-0 mb-10">
+            <div class="px-5 py-4 border-b border-outline/10 bg-surface-container-low">
+                <h3 class="text-[10px] font-black text-on-surface uppercase tracking-widest flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">table_chart</span> Standar Kebutuhan Pakan (100 Ekor)
+                </h3>
+            </div>
+            <table class="w-full text-[10px] text-left">
+                <thead class="bg-surface-container-high text-on-surface font-black uppercase tracking-widest">
+                    <tr>
+                        <th class="px-4 py-3">Umur (Minggu)</th>
+                        <th class="px-4 py-3 text-center">gr / hari</th>
+                        <th class="px-4 py-3 text-right">kg / hari</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline/5">
+                    <tr class="bg-primary/5"><td colspan="3" class="px-4 py-2 font-black text-primary uppercase tracking-widest text-[8px]">Masa Brooding</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">0 - 1</td><td class="px-4 py-3 text-center">10</td><td class="px-4 py-3 text-right font-black">1.0</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">1 - 2</td><td class="px-4 py-3 text-center">15</td><td class="px-4 py-3 text-right font-black">1.5</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">2 - 3</td><td class="px-4 py-3 text-center">20</td><td class="px-4 py-3 text-right font-black">2.0</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">3 - 4</td><td class="px-4 py-3 text-center">25</td><td class="px-4 py-3 text-right font-black">2.5</td></tr>
+                    
+                    <tr class="bg-secondary/5"><td colspan="3" class="px-4 py-2 font-black text-secondary uppercase tracking-widest text-[8px]">Pembesaran</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">4 - 5</td><td class="px-4 py-3 text-center">30</td><td class="px-4 py-3 text-right font-black">3.0</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">5 - 6</td><td class="px-4 py-3 text-center">40</td><td class="px-4 py-3 text-right font-black">4.0</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">6 - 7</td><td class="px-4 py-3 text-center">50</td><td class="px-4 py-3 text-right font-black">5.0</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">7 - 8</td><td class="px-4 py-3 text-center">70</td><td class="px-4 py-3 text-right font-black">7.0</td></tr>
+                </tbody>
+                <tfoot class="bg-green-800 text-white font-black uppercase tracking-widest text-[10px]">
+                    <tr>
+                        <td colspan="2" class="px-4 py-4 text-right">Total Pakan (63 Hari):</td>
+                        <td class="px-4 py-4 text-right text-sm">245 kg</td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </main>
 
