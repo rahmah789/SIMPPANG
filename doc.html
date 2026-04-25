@@ -35,7 +35,7 @@
                     <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Berat Rata-Rata per Ekor (gram)</label>
                     <input type="number" step="0.1" id="doc-berat" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="">
                 </div>
-                <button type="button" id="btn-simpan" onclick="evaluasiDOC()" class="w-full bg-white text-primary border-2 border-primary font-black text-xs py-4 rounded-2xl shadow-sm active:scale-95 transition-all uppercase tracking-widest mt-2">
+                <button type="button" id="btn-simpan" onclick="evaluasiDOC()" class="w-full bg-white text-green-700 border-2 border-green-600 font-black text-xs py-4 rounded-2xl shadow-sm active:scale-95 transition-all uppercase tracking-widest mt-2">
                     Simpan & Evaluasi
                 </button>
             </form>
@@ -82,9 +82,9 @@
             const btn = document.getElementById('btn-simpan');
             
             if(tgl && jumlah && berat) {
-                btn.className = "w-full bg-primary text-white border-2 border-primary font-black text-xs py-4 rounded-2xl shadow-lg active:scale-95 transition-all uppercase tracking-widest mt-2 hover:bg-green-800";
+                btn.className = "w-full bg-green-700 text-white border-2 border-green-700 font-black text-xs py-4 rounded-2xl shadow-lg active:scale-95 transition-all uppercase tracking-widest mt-2 hover:bg-green-800";
             } else {
-                btn.className = "w-full bg-white text-primary border-2 border-primary font-black text-xs py-4 rounded-2xl shadow-sm active:scale-95 transition-all uppercase tracking-widest mt-2";
+                btn.className = "w-full bg-white text-green-700 border-2 border-green-600 font-black text-xs py-4 rounded-2xl shadow-sm active:scale-95 transition-all uppercase tracking-widest mt-2";
             }
         }
 
@@ -103,8 +103,8 @@
             const icon = document.getElementById('hasil-icon');
             
             if(!tgl || jumlah === 0 || berat === 0) {
-                box.className = "mt-6 p-5 rounded-2xl border-2 border-orange-400 bg-orange-50 text-orange-800";
-                icon.innerText = "warning";
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-gray-400 bg-gray-100 text-gray-900 shadow-sm";
+                icon.innerText = "info";
                 title.innerText = "Data Belum Lengkap";
                 desc.innerText = "Harap isi tanggal, jumlah ekor, dan berat rata-rata untuk melihat kesimpulan.";
                 box.classList.remove('hidden');
@@ -113,17 +113,17 @@
             
             // Evaluasi standar berat DOC (idealnya 35-40 gram)
             if(berat >= 35 && berat <= 45) {
-                box.className = "mt-6 p-5 rounded-2xl border-2 border-primary bg-primary-fixed/30 text-primary";
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-green-700 bg-green-600 text-white shadow-lg";
                 icon.innerText = "check_circle";
                 title.innerText = "Kondisi Sangat Baik";
                 desc.innerText = `Berat rata-rata ${berat} gram sangat ideal untuk DOC. Pertahankan suhu brooding (32-34°C) dan berikan air gula/vitamin di hari pertama agar energi cepat pulih.`;
             } else if(berat < 35) {
-                box.className = "mt-6 p-5 rounded-2xl border-2 border-red-500 bg-red-50 text-red-800";
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-red-500 bg-red-600 text-white shadow-lg";
                 icon.innerText = "trending_down";
                 title.innerText = "Berat Kurang (Di Bawah Standar)";
                 desc.innerText = `Berat rata-rata ${berat} gram berada di bawah standar ideal (>35g). Segera berikan tambahan vitamin, pastikan kehangatan kandang merata, dan cek kualitas bibit dari supplier.`;
             } else {
-                box.className = "mt-6 p-5 rounded-2xl border-2 border-blue-500 bg-blue-50 text-blue-800";
+                box.className = "mt-6 p-5 rounded-2xl border-2 border-blue-700 bg-blue-600 text-white shadow-lg";
                 icon.innerText = "verified";
                 title.innerText = "Berat Di Atas Rata-rata";
                 desc.innerText = `Berat rata-rata ${berat} gram lebih besar dari biasanya. Ini adalah indikator genetik/bibit yang bagus. Jangan lupa puasa makan 1-2 jam pertama (hanya air) untuk membersihkan pencernaan sisa kuning telur.`;

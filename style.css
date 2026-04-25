@@ -107,3 +107,21 @@ input:focus {
     border-color: var(--primary) !important;
     box-shadow: 0 0 0 4px rgba(32, 78, 43, 0.1) !important;
 }
+
+/* Tailwind Compatibility Utilities */
+.text-primary { color: var(--primary); }
+.bg-primary { background-color: var(--primary); }
+.border-primary { border-color: var(--primary); }
+
+.text-secondary { color: var(--secondary); }
+.bg-secondary { background-color: var(--secondary); }
+.border-secondary { border-color: var(--secondary); }
+
+.bg-primary-fixed { background-color: var(--primary-fixed); }
+.bg-secondary-fixed { background-color: var(--secondary-fixed); }
+
+.text-on-surface { color: #1b1c1a; }
+.text-on-surface-variant { color: #475569; }
+.bg-surface-container-low { background-color: #f8fafc; }
+.bg-surface-container-high { background-color: #e2e8f0; }
+
