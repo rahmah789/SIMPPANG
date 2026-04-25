@@ -42,24 +42,23 @@
 
         <!-- Dynamic Summary Grid -->
         <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-            <div class="app-card shadow-premium p-5 relative overflow-hidden">
+            <div class="app-card shadow-premium p-4 relative overflow-hidden">
                 <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Populasi</p>
-                <h3 class="text-2xl font-black text-on-surface tracking-tighter">1.250 <span class="text-[10px] opacity-40 font-bold uppercase ml-1">Ekor</span></h3>
+                <input type="number" class="w-full bg-transparent border-0 p-0 text-sm font-black text-on-surface tracking-tighter focus:ring-0 placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
             </div>
-            <div class="app-card shadow-premium p-5 relative overflow-hidden">
+            <div class="app-card shadow-premium p-4 relative overflow-hidden">
                 <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Keuangan</p>
-                <h3 id="home-money" class="text-lg font-black text-primary tracking-tighter">Rp 0</h3>
-                <p class="text-[9px] font-bold text-on-surface-variant/40 uppercase">Saldo Modal</p>
+                <input type="number" class="w-full bg-transparent border-0 p-0 text-sm font-black text-primary tracking-tighter focus:ring-0 placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                <p class="text-[9px] font-bold text-on-surface-variant/40 uppercase mt-1">Saldo Modal</p>
             </div>
-            <div class="app-card shadow-premium p-5 relative overflow-hidden border-secondary/20">
+            <div class="app-card shadow-premium p-4 relative overflow-hidden border-secondary/20">
                 <p class="text-[10px] font-black text-secondary uppercase tracking-widest mb-1">Pemasaran</p>
-                <h3 id="home-stock" class="text-2xl font-black text-secondary tracking-tighter">0</h3>
-                <p class="text-[9px] font-bold text-secondary/40 uppercase">Stok Siap Jual</p>
+                <input type="number" class="w-full bg-transparent border-0 p-0 text-sm font-black text-secondary tracking-tighter focus:ring-0 placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
+                <p class="text-[9px] font-bold text-secondary/40 uppercase mt-1">Stok Siap Jual</p>
             </div>
-            <div class="app-card shadow-premium p-5 relative overflow-hidden border-primary/30">
+            <div class="app-card shadow-premium p-4 relative overflow-hidden border-primary/30">
                 <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">HPP Real</p>
-                <h3 id="home-hpp" class="text-xl font-black text-primary tracking-tighter">Rp 0</h3>
-                    <span class="material-symbols-outlined text-[64px]"></span>
+                <input type="number" class="w-full bg-transparent border-0 p-0 text-sm font-black text-primary tracking-tighter focus:ring-0 placeholder:text-[10px] placeholder:font-normal placeholder:text-gray-400" placeholder="masukkan input..">
             </div>
         </section>
 
@@ -94,11 +93,10 @@
             </a>
 
             <!-- Asisten -->
-            <a href="asisten.html" class="app-card shadow-premium bg-gradient-to-br from-primary to-purple-600 p-5 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden text-white border-0">
-                <div class="absolute -right-4 -top-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
-                <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">🤖</div>
-                <h3 class="text-sm font-black uppercase tracking-tighter">Asisten AI</h3>
-                <p class="text-[9px] text-white/80 font-medium mt-1 italic leading-tight">Tanya solusi masalah ternakmu di sini!</p>
+            <a href="asisten.html" class="app-card shadow-premium bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-5 flex flex-col justify-center items-center text-center min-h-[160px] active:scale-95 transition-all group relative overflow-hidden">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm mb-3 group-hover:scale-110 transition-transform">🤖</div>
+                <h3 class="text-sm font-black text-purple-900 uppercase tracking-tighter">Asisten AI</h3>
+                <p class="text-[9px] text-purple-800/70 font-bold mt-1">Tanya solusi masalah ternakmu di sini!</p>
             </a>
         </div>
     </main>
@@ -129,22 +127,7 @@
 
 
     <script>
-        function loadDashboard() {
-            const financials = JSON.parse(localStorage.getItem('simppang_expenses')) || [];
-            const modal = parseInt(localStorage.getItem('simppang_modal')) || 0;
-            const marketing = JSON.parse(localStorage.getItem('simppang_marketing')) || {};
-
-            const totalExp = financials.reduce((a, b) => a + parseInt(b.jumlah), 0);
-            const totalStock = Object.values(marketing).reduce((a, b) => a + parseInt(b.stock || 0), 0);
-            const hpp = financials.length > 0 ? (totalExp / 2000) : 0;
-
-            const formatter = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
-
-            document.getElementById('home-money').innerText = formatter.format(modal);
-            document.getElementById('home-stock').innerText = totalStock;
-            document.getElementById('home-hpp').innerText = hpp > 0 ? formatter.format(hpp) : 'Rp 0';
-        }
-        loadDashboard();
+        // No auto-load dashboard values since user wants to input them manually
     </script>
 </body>
 </html>
