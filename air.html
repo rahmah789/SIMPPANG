@@ -39,10 +39,16 @@
             </div>
         </div>
 
+        <!-- Dynamic Input -->
+        <div class="app-card shadow-premium p-6 mb-8 border-l-4 border-blue-500">
+            <label class="block text-[10px] font-black text-on-surface-variant uppercase mb-3 tracking-widest">Masukkan Jumlah Populasi (Ekor)</label>
+            <input type="number" id="input-populasi" oninput="updateTabelAir()" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="Contoh: 100" value="100">
+        </div>
+
         <!-- Consumption Guide -->
         <div class="app-card shadow-premium overflow-hidden border-0 mb-10">
             <div class="px-5 py-4 border-b border-outline/10">
-                <h3 class="text-xs font-black text-on-surface uppercase tracking-widest">Konsumsi/100 Ekor</h3>
+                <h3 class="text-xs font-black text-on-surface uppercase tracking-widest">Kebutuhan Air / <span id="display-populasi">100</span> Ekor</h3>
             </div>
             <table class="w-full text-[10px] text-left">
                 <thead class="bg-surface-container-high text-on-surface font-black uppercase tracking-widest">
@@ -52,10 +58,8 @@
                         <th class="px-4 py-3 text-right">Liter / Minggu</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-outline/5">
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">Minggu 1</td><td class="px-4 py-3 text-center">2 - 3 L</td><td class="px-4 py-3 text-right font-black">14 - 21 L</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">Minggu 2</td><td class="px-4 py-3 text-center">4 - 6 L</td><td class="px-4 py-3 text-right font-black">28 - 42 L</td></tr>
-                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">Minggu 3</td><td class="px-4 py-3 text-center">7 - 9 L</td><td class="px-4 py-3 text-right font-black">49 - 63 L</td></tr>
+                <tbody id="tabel-air-body" class="divide-y divide-outline/5">
+                    <!-- Dynamic Rows -->
                 </tbody>
             </table>
         </div>
@@ -85,5 +89,38 @@
         </a>
     </nav>
 
+    <script>
+        const standarAir = [
+            { minggu: 1, min: 2, max: 3 },
+            { minggu: 2, min: 4, max: 6 },
+            { minggu: 3, min: 7, max: 9 }
+        ];
+
+        function updateTabelAir() {
+            const populasi = parseFloat(document.getElementById('input-populasi').value) || 0;
+            document.getElementById('display-populasi').innerText = populasi;
+            
+            const tbody = document.getElementById('tabel-air-body');
+            const factor = populasi / 100;
+            
+            tbody.innerHTML = standarAir.map(s => {
+                const dailyMin = (s.min * factor).toFixed(1);
+                const dailyMax = (s.max * factor).toFixed(1);
+                const weeklyMin = (s.min * factor * 7).toFixed(1);
+                const weeklyMax = (s.max * factor * 7).toFixed(1);
+                
+                return `
+                    <tr class="font-medium text-on-surface">
+                        <td class="px-4 py-3">Minggu ${s.minggu}</td>
+                        <td class="px-4 py-3 text-center">${dailyMin} - ${dailyMax} L</td>
+                        <td class="px-4 py-3 text-right font-black">${weeklyMin} - ${weeklyMax} L</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Initialize
+        updateTabelAir();
+    </script>
 </body>
 </html>
