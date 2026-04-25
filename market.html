@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#acf847",
+                        "on-secondary-container": "#457000",
+                        "inverse-primary": "#4edea3",
+                        "on-background": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#3d4947",
+                        "secondary": "#416900",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002113",
+                        "on-primary-fixed-variant": "#005236",
+                        "secondary-fixed-dim": "#91db2a",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-fixed-dim": "#4edea3",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#6c7a71",
+                        "on-secondary-fixed-variant": "#304f00",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary-fixed": "#121e1c",
+                        "secondary-fixed": "#acf847",
+                        "surface-container-low": "#eff4ff",
+                        "outline-variant": "#bbcabf",
+                        "tertiary-fixed": "#d8e5e2",
+                        "tertiary-container": "#98a5a3",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#bcc9c6",
+                        "background": "#f8f9ff",
+                        "tertiary": "#55615f",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "surface-tint": "#006c49",
+                        "primary-fixed": "#6ffbbe",
+                        "on-surface-variant": "#3c4a42",
+                        "on-tertiary-container": "#2f3b39",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-container": "#10b981",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "primary": "#006c49",
+                        "on-secondary-fixed": "#102000",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#00422b",
+                        "surface-container-high": "#dce9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-xs": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-xs": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background">
+<!-- Top AppBar Component -->
+<header class="bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none docked full-width top-0 sticky z-40">
+<div class="flex justify-between items-center w-full px-6 h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<img alt="User profile" class="w-8 h-8 rounded-full bg-surface-container" data-alt="close-up portrait of a professional modern farmer wearing a clean collared shirt smiling with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNaeiTeJb_3JaCUFQ3e4gT4VDxo-JcQKc8LehWzdGDhG6PczBmNPduMxuWNyvTgPu1RuexnWeexix33hj6Fl8J6E7Q6Sm7mlTry-7Lhn12wigMqfxjgIyDnP8P9n-_gxU-XoegEkxuk-nqv9Xln18qXgJ9AMbjBomE97QtDgOYcPLLoh4wXVSkWWnl9T5eUCQff5pyX5qjBnfcWh4Ee52HWjWPEZCbAZyKZ4sHexDySRDXGPtLdWZ9VC_9MHywj6V54y6f8O-TjPA"/>
+<h1 class="text-xl font-extrabold tracking-tight text-emerald-600 dark:text-emerald-400 font-['Plus_Jakarta_Sans'] antialiased">SIMPPANG</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-500" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pb-24 max-w-7xl mx-auto px-4 sm:px-6">
+<!-- Search & Hero Section -->
+<section class="py-8">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-white border border-outline-variant rounded-2xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm font-body-md text-on-surface" placeholder="Cari bibit, pakan, atau peralatan peternakan..." type="text"/>
+</div>
+<div class="mt-8 relative h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg">
+<img alt="Marketing Banner" class="w-full h-full object-cover" data-alt="vibrant agricultural landscape with rows of organic poultry farms and lush green fields under a bright morning sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYa7A2ZfTFZ_o3cV4YYwF8seou79o_L0cXbGnLmlQP6nnwiN1_1xlEpIyH0EJgSi_Gw4-Fh_Nf755tzLfuvrJHFn1bbjPdGxSAkoQLHHIePKnPMcHNQjaiZtYmwZh-DTxceucmMWtXHj_Au_ONMuWGfoaDWPkEScodIeuh_HubYvrZM9-N6IMHptWJZydlJGZkcs74--Oal0f1zMw2tXZn76hZRwgd0cIvcQ-JS_sWNYNHZpP1a4klElev6qLtV9gQSCr374nVa8E"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-primary-container/80 to-transparent flex flex-col justify-center px-8">
+<h2 class="text-white font-headline-md text-headline-md max-w-xs">Tingkatkan Hasil Ternak Anda Sekarang!</h2>
+<p class="text-primary-fixed font-label-sm mt-2">Diskon hingga 20% untuk pembelian DOC minggu ini.</p>
+</div>
+</div>
+</section>
+<!-- Category Grid -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="font-headline-md text-body-lg font-bold text-on-background">Kategori Pilihan</h3>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="egg_alt">egg_alt</span>
+</div>
+<span class="font-label-sm text-label-xs">Telur</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="child_care">child_care</span>
+</div>
+<span class="font-label-sm text-label-xs">DOC</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="female">female</span>
+</div>
+<span class="font-label-sm text-label-xs">Indukan</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center text-red-600 group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="flatware">flatware</span>
+</div>
+<span class="font-label-sm text-label-xs">Daging</span>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="font-headline-md text-body-lg font-bold text-on-background">Produk Terlaris</h3>
+<a class="text-primary font-label-sm hover:underline" href="#">Lihat Semua</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-3xl border border-outline-variant p-4 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="h-40 rounded-2xl overflow-hidden mb-4">
+<img alt="Telur Organik" class="w-full h-full object-cover" data-alt="close-up of fresh brown organic eggs in a rustic wooden basket with soft natural lighting and straw texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw2S_ReosgbexMNDo74n9c-I5O0U5J0Zgj8oYpuQvvY0Ks3Uq6cZR2F3s5E7I7U8tnP1gPDoI63bTm4KTgl7KYRd_uZPoZXHLKNuEAnAbliRotdgX_280L3qwEqMKc2Z_uwCJUM5oJZzAqMeWMJU7PjwuH8VbvNKTq8XXWV6t68ysB0u4AJl6sK6vb9LigTT7p4xG7oXzehfUvw6KlNuyNV9YwAjLiwiHoTUlHhUqKDUamV3sCYhD6Txtz1BOO-DJADREj9GEQCfs"/>
+</div>
+<div class="px-1 flex-grow">
+<span class="inline-block px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-[10px] font-bold mb-2 uppercase">Ready Stock</span>
+<h4 class="font-headline-md text-body-md font-bold mb-1">Telur Ayam Kampung Super</h4>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-amber-400 text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-xs text-on-surface-variant">0 (0 terjual)</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-primary font-bold text-body-lg">Rp 32.000<span class="text-label-xs text-outline font-normal">/kg</span></p>
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-white px-4 py-2 rounded-xl text-label-sm active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-3xl border border-outline-variant p-4 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="h-40 rounded-2xl overflow-hidden mb-4">
+<img alt="DOC Broiler" class="w-full h-full object-cover" data-alt="cute yellow baby chicks in a modern poultry hatchery environment with clean bright lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqiBoCxvEmNkBpTDGU5AEdyiCMR1FoO3DTnmbIJDizwwCOUMeXHnP0OGndnFp78ao9OTRbxPmPc6btqtZKh_zvGJ_of_Gfnem92_CXg2d3X01fUp8LLvj8SHzI33E61oXBoi6m1CyqbxMPrGu1oX11x0SKb--I6HHV0LpcYGCH_vysGmtmH5vye2hH4DeCelTFlsfoigeaP1HK7cX_Ewu23IUIJypj5HrHZyrqsysOS3RhjsYbe6FmNk5fg7JQcMCIVF6FcQadf8"/>
+</div>
+<div class="px-1 flex-grow">
+<span class="inline-block px-2 py-1 rounded-lg bg-orange-50 text-orange-700 text-[10px] font-bold mb-2 uppercase">Limited</span>
+<h4 class="font-headline-md text-body-md font-bold mb-1">DOC Broiler Grade A</h4>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-amber-400 text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-xs text-on-surface-variant">0 (0 terjual)</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-primary font-bold text-body-lg">Rp 7.500<span class="text-label-xs text-outline font-normal">/ekor</span></p>
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-white px-4 py-2 rounded-xl text-label-sm active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Logistics Bento Grid -->
+<section class="mb-10">
+<h3 class="font-headline-md text-body-lg font-bold text-on-background mb-4 px-2">Logistik &amp; Distribusi</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-2 bg-gradient-to-br from-white to-surface-container-low border border-outline-variant p-6 rounded-3xl flex items-center justify-between shadow-sm relative overflow-hidden">
+<div class="z-10">
+<h4 class="text-body-lg font-bold text-primary-container">Lacak Pengiriman</h4>
+<p class="text-label-sm text-on-surface-variant mb-4">Monitor rute armada Anda secara real-time.</p>
+<button class="bg-on-primary-container text-white px-6 py-2.5 rounded-full text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span>
+                            Cek Armada
+                        </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="map">map</span>
+</div>
+</div>
+<div class="bg-secondary-container p-6 rounded-3xl flex flex-col justify-between text-on-secondary-container shadow-sm border border-secondary">
+<span class="material-symbols-outlined text-4xl" data-icon="temperature_75">speed_0_75</span>
+<div>
+<h4 class="font-bold text-body-md">Cold Chain</h4>
+<p class="text-[12px] opacity-80">Suhu terjaga sepanjang perjalanan.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Section -->
+<section class="mb-10">
+<div class="bg-surface-container-high rounded-[32px] p-8">
+<div class="text-center mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface">Gabung Komunitas</h3>
+<p class="text-body-md text-on-surface-variant">Hubungkan bisnis Anda dengan ribuan peternak lainnya.</p>
+</div>
+<div class="flex justify-center gap-6">
+<a class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform border border-outline-variant text-[#1DA1F2]" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="forum">forum</span>
+</a>
+<a class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform border border-outline-variant text-[#E1306C]" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="camera_alt">camera_alt</span>
+</a>
+<a class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform border border-outline-variant text-[#25D366]" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="chat">chat</span>
+</a>
+<a class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform border border-outline-variant text-red-600" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="smart_display">smart_display</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom NavBar Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-8px_24px_rgba(16,185,129,0.08)] rounded-t-[24px]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1.5 tap-highlight-transparent active:scale-90 transition-transform font-['Plus_Jakarta_Sans'] text-[10px] font-medium" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1.5 tap-highlight-transparent active:scale-90 transition-transform font-['Plus_Jakarta_Sans'] text-[10px] font-medium" href="farming.html">
+<span class="material-symbols-outlined" data-icon="agriculture">agriculture</span>
+<span>Pemeliharaan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1.5 tap-highlight-transparent active:scale-90 transition-transform font-['Plus_Jakarta_Sans'] text-[10px] font-medium" href="finance.html">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Keuangan</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-2xl px-4 py-1.5 tap-highlight-transparent active:scale-90 transition-transform font-['Plus_Jakarta_Sans'] text-[10px] font-medium" href="market.html">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span>Pemasaran</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1.5 tap-highlight-transparent active:scale-90 transition-transform font-['Plus_Jakarta_Sans'] text-[10px] font-medium" href="assistant.html">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span>Asisten</span>
+</a>
+</nav>
+</body></html>

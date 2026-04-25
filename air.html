@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SIMPPANG - Manajemen Air Minum</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background text-on-background min-h-screen safe-p-bottom">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 glass-header flex justify-between items-center px-6 h-20">
+        <div class="flex items-center gap-3">
+            <a href="farming.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-sm text-primary">
+                <span class="material-symbols-outlined font-bold">arrow_back</span>
+            </a>
+            <h1 class="text-xl font-black text-primary uppercase tracking-tighter">Manajemen Air</h1>
+        </div>
+    </header>
+
+    <main class="pt-28 px-6 max-w-5xl mx-auto animate-slide-up">
+        <!-- Hero Stats -->
+        <div class="grid grid-cols-1 gap-4 mb-8">
+            <div class="app-card shadow-premium p-6 flex flex-col items-center text-center bg-blue-500 text-white border-0">
+                <span class="material-symbols-outlined text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+                <h2 class="text-sm font-black uppercase tracking-widest opacity-80">Kualitas Air</h2>
+                <div class="flex gap-4 mt-4">
+                    <div class="text-center">
+                        <p class="text-[8px] font-black uppercase opacity-60">pH Ideal</p>
+                        <p class="text-base font-black">6.5 - 7.5</p>
+                    </div>
+                    <div class="w-[1px] h-8 bg-white/20"></div>
+                    <div class="text-center">
+                        <p class="text-[8px] font-black uppercase opacity-60">Suhu</p>
+                        <p class="text-base font-black">20° - 24°C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consumption Guide -->
+        <div class="app-card shadow-premium overflow-hidden border-0 mb-10">
+            <div class="px-5 py-4 border-b border-outline/10">
+                <h3 class="text-xs font-black text-on-surface uppercase tracking-widest">Konsumsi/100 Ekor</h3>
+            </div>
+            <table class="w-full text-[10px] text-left">
+                <thead class="bg-surface-container-high text-on-surface font-black uppercase tracking-widest">
+                    <tr>
+                        <th class="px-4 py-3">Minggu</th>
+                        <th class="px-4 py-3 text-center">Liter / Hari</th>
+                        <th class="px-4 py-3 text-right">Liter / Minggu</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline/5">
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">Minggu 1</td><td class="px-4 py-3 text-center">2 - 3 L</td><td class="px-4 py-3 text-right font-black">14 - 21 L</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">Minggu 2</td><td class="px-4 py-3 text-center">4 - 6 L</td><td class="px-4 py-3 text-right font-black">28 - 42 L</td></tr>
+                    <tr class="font-medium text-on-surface"><td class="px-4 py-3">Minggu 3</td><td class="px-4 py-3 text-center">7 - 9 L</td><td class="px-4 py-3 text-right font-black">49 - 63 L</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Global Nav -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 glass-nav flex justify-around items-center px-4 pb-8 pt-4">
+        <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="index.html">
+            <span class="material-symbols-outlined text-[24px]">home</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Beranda</span>
+        </a>
+        <a class="nav-item active flex flex-col items-center justify-center gap-1" href="farming.html">
+            <span class="material-symbols-outlined text-[24px]">agriculture</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Ternak</span>
+        </a>
+        <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="financials.html">
+            <span class="material-symbols-outlined text-[24px]">payments</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Uang</span>
+        </a>
+        <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="marketing.html">
+            <span class="material-symbols-outlined text-[24px]">storefront</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Pasar</span>
+        </a>
+        <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="asisten.html">
+            <span class="material-symbols-outlined text-[24px]">smart_toy</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">AI</span>
+        </a>
+    </nav>
+
+</body>
+</html>

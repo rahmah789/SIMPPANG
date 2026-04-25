@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SIMPPANG - Asisten</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background text-on-background min-h-screen safe-p-bottom">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 glass-header flex justify-between items-center px-6 h-20">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-sm text-primary">
+                <span class="material-symbols-outlined font-bold">arrow_back</span>
+            </a>
+            <h1 class="text-xl font-black text-primary uppercase tracking-tighter">Asisten AI</h1>
+        </div>
+        <div class="flex items-center gap-2 bg-primary-fixed/30 px-3 py-1.5 rounded-full border border-primary/20">
+            <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            <span class="text-[9px] font-black text-primary uppercase tracking-widest">Online</span>
+        </div>
+    </header>
+
+    <main class="pt-28 px-6 max-w-5xl mx-auto animate-slide-up flex flex-col gap-6">
+        <!-- AI Hero -->
+        <div class="app-card shadow-premium p-6 flex items-center gap-4 bg-primary text-white">
+            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md">
+                <span class="material-symbols-outlined text-4xl">smart_toy</span>
+            </div>
+            <div>
+                <h2 class="text-lg font-black uppercase tracking-tighter">Si-Pang AI</h2>
+                <p class="text-[10px] font-bold opacity-60">Konsultan Peternakan Cerdas</p>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="flex flex-col gap-4 mb-32">
+            <div class="flex flex-col items-start gap-1 max-w-[85%]">
+                <div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm text-sm font-medium text-on-surface">
+                    Halo! Saya asisten AI Anda. Ada yang bisa saya bantu terkait pengelolaan kandang atau analisis keuangan hari ini?
+                </div>
+                <span class="text-[8px] font-black text-on-surface-variant uppercase ml-1">09:41 · Si-Pang</span>
+            </div>
+
+            <div class="flex flex-col items-end gap-1 ml-auto max-w-[85%]">
+                <div class="bg-primary text-white p-4 rounded-2xl rounded-tr-none shadow-sm text-sm font-medium">
+                    Bagaimana cara meningkatkan bobot ayam lebih cepat?
+                </div>
+                <span class="text-[8px] font-black text-on-surface-variant uppercase mr-1">09:42 · Anda</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chat Input -->
+    <div class="fixed bottom-28 left-0 w-full px-6 z-40">
+        <div class="glass-header rounded-3xl p-3 shadow-premium flex items-center gap-3 border border-outline/20">
+            <input type="text" placeholder="Tanya sesuatu..." class="flex-1 bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0">
+            <button class="w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center shadow-lg active:scale-90 transition-all">
+                <span class="material-symbols-outlined">send</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Global Nav -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 glass-nav flex justify-around items-center px-4 pb-8 pt-4">
+        <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="index.html">
+            <span class="material-symbols-outlined text-[24px]">home</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Beranda</span>
+        </a>
+        <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="farming.html">
+            <span class="material-symbols-outlined text-[24px]">agriculture</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Ternak</span>
+        </a>
+        <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="financials.html">
+            <span class="material-symbols-outlined text-[24px]">payments</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Uang</span>
+        </a>
+        <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="marketing.html">
+            <span class="material-symbols-outlined text-[24px]">storefront</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Pasar</span>
+        </a>
+        <a class="nav-item active flex flex-col items-center justify-center gap-1" href="asisten.html">
+            <span class="material-symbols-outlined text-[24px]">smart_toy</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">AI</span>
+        </a>
+    </nav>
+</body>
+</html>

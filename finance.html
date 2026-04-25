@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIMPPANG - Keuangan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#acf847",
+                    "on-secondary-container": "#457000",
+                    "inverse-primary": "#4edea3",
+                    "on-background": "#0b1c30",
+                    "on-tertiary-fixed-variant": "#3d4947",
+                    "secondary": "#416900",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#002113",
+                    "on-primary-fixed-variant": "#005236",
+                    "secondary-fixed-dim": "#91db2a",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-fixed-dim": "#4edea3",
+                    "surface-bright": "#f8f9ff",
+                    "outline": "#6c7a71",
+                    "on-secondary-fixed-variant": "#304f00",
+                    "surface-variant": "#d3e4fe",
+                    "on-tertiary-fixed": "#121e1c",
+                    "secondary-fixed": "#acf847",
+                    "surface-container-low": "#eff4ff",
+                    "outline-variant": "#bbcabf",
+                    "tertiary-fixed": "#d8e5e2",
+                    "tertiary-container": "#98a5a3",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#bcc9c6",
+                    "background": "#f8f9ff",
+                    "tertiary": "#55615f",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "surface-tint": "#006c49",
+                    "primary-fixed": "#6ffbbe",
+                    "on-surface-variant": "#3c4a42",
+                    "on-tertiary-container": "#2f3b39",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-container": "#10b981",
+                    "surface-dim": "#cbdbf5",
+                    "on-surface": "#0b1c30",
+                    "primary": "#006c49",
+                    "on-secondary-fixed": "#102000",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#00422b",
+                    "surface-container-high": "#dce9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "48px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "container-margin": "20px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-xs": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-xs": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="bg-white dark:bg-slate-950 font-['Plus_Jakarta_Sans'] antialiased shadow-sm dark:shadow-none border-b border-slate-100 dark:border-slate-800 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="professional portrait of a middle-aged farmer wearing a clean denim shirt with a warm confident smile, outdoor agricultural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBJFJYJxMjCPiVca1_smbbrx2B9Ud0GFw-Bxlpxin6Q4tRPQA78nvkP-FKy_hnz5_6Nwfxdds0MR-uZF2w8VxGsE_YWmDlyJIFE-7-EVM_xO0HihIdpbCfuQ12knsdyxGoBCMnKoTnKfy7zKpqWM5kHJSLuJYhQx8LTBEDF4CbSdw9xXp7gUdb4rLL9fTsvhoBNx4bERAWa4bcbqbEI6bFUQkKWlfHho6Wa0zmmQIpn5ue1OmVBYyY0lkjlaVFH4TEoRBi35kpeeA"/>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-emerald-600 dark:text-emerald-400">SIMPPANG</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8 space-y-8">
+<!-- Hero Balance & Quick Stats -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Balance Card -->
+<div class="lg:col-span-8 bg-white border border-slate-100 rounded-xl p-8 shadow-[0_8px_24px_rgba(16,185,129,0.06)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full -mr-32 -mt-32 opacity-50"></div>
+<div class="relative z-10">
+<p class="text-label-sm font-label-sm text-outline mb-1 uppercase tracking-wider">Total Operational Balance</p>
+<div class="flex items-end gap-4 mb-6">
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Rp 0</h2>
+<div class="flex items-center text-slate-400 font-semibold mb-2 text-sm bg-slate-50 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm mr-1">trending_flat</span>
+                            0%
+                        </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-slate-100">
+<div class="space-y-1">
+<p class="text-label-xs font-label-xs text-outline">Income (This Month)</p>
+<p class="text-body-md font-body-md font-bold text-on-surface">Rp 0</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-xs font-label-xs text-outline">Expenses (This Month)</p>
+<p class="text-body-md font-body-md font-bold text-on-surface">Rp 0</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-xs font-label-xs text-outline">Net Profit</p>
+<p class="text-body-md font-body-md font-bold text-on-surface">Rp 0</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Allocation Card -->
+<div class="lg:col-span-4 bg-white border border-slate-100 rounded-xl p-6 shadow-[0_8px_24px_rgba(16,185,129,0.06)]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-label-sm font-label-sm text-on-surface font-bold">Alokasi Pupuk &amp; Nutrisi</h3>
+<span class="material-symbols-outlined text-emerald-500">agriculture</span>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-outline">Budget Utilization</span>
+<h2 class="font-bold text-on-surface">0%</h2>
+<div class="h-3 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[0%] rounded-full"></div>
+</div>
+<div class="flex justify-between text-xs mt-1">
+<span class="text-outline">Rp 15.000.000</span>
+<span class="text-outline">Rp 23.000.000 Limit</span>
+</div>
+</div>
+<div class="p-4 bg-secondary-container/10 rounded-xl border border-secondary-container/20">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-xl">info</span>
+<p class="text-xs text-on-secondary-container leading-relaxed">
+<strong>Smart Tip:</strong> Sisa budget nutrisi disarankan dialokasikan untuk penambahan kalsium fase berbunga minggu depan.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Charts Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Monthly Cash Flow -->
+<div class="bg-white border border-slate-100 rounded-xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-headline-md font-headline-md text-on-surface">Cash Flow</h3>
+<select class="text-xs border-slate-200 rounded-lg bg-surface-container-low text-on-surface-variant focus:ring-emerald-500 focus:border-emerald-500">
+<option>Last 6 Months</option>
+<option>This Year</option>
+</select>
+</div>
+<!-- Visual Placeholder for Chart -->
+<div class="flex items-end justify-between h-48 gap-3">
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-emerald-100 rounded-t-lg h-[40%]"></div>
+<div class="w-full bg-emerald-600 rounded-t-lg h-[30%] -mt-1 relative z-10"></div>
+<span class="text-[10px] mt-2 text-outline">Jan</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-emerald-100 rounded-t-lg h-[60%]"></div>
+<div class="w-full bg-emerald-600 rounded-t-lg h-[45%] -mt-1 relative z-10"></div>
+<span class="text-[10px] mt-2 text-outline">Feb</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-emerald-100 rounded-t-lg h-[55%]"></div>
+<div class="w-full bg-emerald-600 rounded-t-lg h-[40%] -mt-1 relative z-10"></div>
+<span class="text-[10px] mt-2 text-outline">Mar</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-emerald-100 rounded-t-lg h-[80%]"></div>
+<div class="w-full bg-emerald-600 rounded-t-lg h-[65%] -mt-1 relative z-10"></div>
+<span class="text-[10px] mt-2 text-outline">Apr</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-emerald-100 rounded-t-lg h-[70%]"></div>
+<div class="w-full bg-emerald-600 rounded-t-lg h-[50%] -mt-1 relative z-10"></div>
+<span class="text-[10px] mt-2 text-outline">May</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-emerald-100 rounded-t-lg h-[90%]"></div>
+<div class="w-full bg-emerald-600 rounded-t-lg h-[75%] -mt-1 relative z-10"></div>
+<span class="text-[10px] mt-2 text-outline">Jun</span>
+</div>
+</div>
+<div class="flex gap-4 mt-6 justify-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-emerald-100"></span>
+<span class="text-xs text-outline">Pemasukan</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-emerald-600"></span>
+<span class="text-xs text-outline">Pengeluaran</span>
+</div>
+</div>
+</div>
+<!-- Expense Distribution -->
+<div class="bg-white border border-slate-100 rounded-xl p-6 shadow-sm">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-8">Distribusi Pengeluaran</h3>
+<div class="flex items-center justify-center gap-8">
+<!-- Donut Chart Placeholder -->
+<div class="relative w-40 h-40">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="16" stroke="#f1f5f9" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="16" stroke="#10b981" stroke-dasharray="45 100" stroke-dashoffset="0" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="16" stroke="#acf847" stroke-dasharray="25 100" stroke-dashoffset="-45" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="16" stroke="#64748b" stroke-dasharray="30 100" stroke-dashoffset="-70" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-xs text-outline">Total</span>
+<span class="text-sm font-bold">18.4M</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="text-xs text-outline">Pupuk (45%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="text-xs text-outline">Logistik (25%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-slate-500"></span>
+<span class="text-xs text-outline">Lainnya (30%)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Transactions -->
+<div class="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-100 flex justify-between items-center">
+<h3 class="text-headline-md font-headline-md text-on-surface">Transaksi Terakhir</h3>
+<button class="text-emerald-600 text-sm font-semibold hover:underline">Lihat Semua</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 text-outline text-xs uppercase tracking-wider">
+<th class="px-6 py-4 font-semibold">Transaksi</th>
+<th class="px-6 py-4 font-semibold">Tanggal</th>
+<th class="px-6 py-4 font-semibold">Kategori</th>
+<th class="px-6 py-4 font-semibold">Jumlah</th>
+<th class="px-6 py-4 font-semibold">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr>
+<td colspan="5" class="px-6 py-12 text-center text-slate-400">
+<span class="material-symbols-outlined text-4xl mb-2">database_off</span>
+<p class="text-sm">Belum ada riwayat transaksi</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-8px_24px_rgba(16,185,129,0.08)] rounded-t-[24px]">
+<a href="index.html" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1.5 hover:text-emerald-500 dark:hover:text-emerald-300 tap-highlight-transparent active:scale-90 transition-transform">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium mt-1">Beranda</span>
+</a>
+<a href="farming.html" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1.5 hover:text-emerald-500 dark:hover:text-emerald-300 tap-highlight-transparent active:scale-90 transition-transform">
+<span class="material-symbols-outlined">agriculture</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium mt-1">Pemeliharaan</span>
+</a>
+<a href="finance.html" class="flex flex-col items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-2xl px-4 py-1.5 tap-highlight-transparent active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium mt-1">Keuangan</span>
+</a>
+<a href="market.html" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1.5 hover:text-emerald-500 dark:hover:text-emerald-300 tap-highlight-transparent active:scale-90 transition-transform">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium mt-1">Pemasaran</span>
+</a>
+<a href="assistant.html" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1.5 hover:text-emerald-500 dark:hover:text-emerald-300 tap-highlight-transparent active:scale-90 transition-transform">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium mt-1">Asisten</span>
+</a>
+</nav>
+<!-- FAB (Suppressed on this transactional-heavy screen as per guidelines) -->
+</body></html>

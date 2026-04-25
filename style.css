@@ -1,0 +1,128 @@
+/* 
+   SIMPPANG Global Style - Professional Mobile UI
+   Aesthetics: Premium, Modern, Agriculture-themed
+*/
+
+:root {
+    --primary: #059669; /* Emerald 600 */
+    --primary-fixed: #d1fae5; /* Emerald 100 */
+    --on-primary: #ffffff;
+    --secondary: #f59e0b; /* Amber 500 */
+    --secondary-fixed: #fef3c7; /* Amber 100 */
+    --tertiary: #3b82f6; /* Blue 500 */
+    --tertiary-fixed: #dbeafe; /* Blue 100 */
+    --background: #f8fafc; /* Slate 50 */
+    --surface: #ffffff;
+    --outline: #e2e8f0; /* Slate 200 */
+    --glass: rgba(255, 255, 255, 0.85);
+}
+
+/* Gradient Utilities */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, #10b981 100%);
+}
+.bg-gradient-secondary {
+    background: linear-gradient(135deg, var(--secondary) 0%, #fbbf24 100%);
+}
+.bg-gradient-tertiary {
+    background: linear-gradient(135deg, var(--tertiary) 0%, #60a5fa 100%);
+}
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--background);
+    color: #1b1c1a;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Components */
+.glass-header {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: var(--glass);
+    border-bottom: 1px solid rgba(193, 201, 190, 0.2);
+}
+
+.glass-nav {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    background: rgba(251, 249, 246, 0.9);
+    border-top: 1px solid rgba(193, 201, 190, 0.3);
+}
+
+/* Premium Shadows & Borders */
+.app-card {
+    background: var(--surface);
+    border: 1px solid rgba(193, 201, 190, 0.3);
+    border-radius: 28px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-card:active {
+    transform: scale(0.97);
+}
+
+.shadow-premium {
+    box-shadow: 0 10px 30px -10px rgba(32, 78, 43, 0.1);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Custom Nav Active State */
+.nav-item.active {
+    background: var(--primary-fixed);
+    color: var(--primary);
+    border-radius: 20px;
+    padding: 8px 16px;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(32, 78, 43, 0.1);
+}
+
+.nav-item.active span {
+    font-variation-settings: 'FILL' 1;
+}
+
+/* Scrollbar Hide */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Mobile Safe Area */
+.safe-p-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 80px);
+}
+
+.safe-m-top {
+    margin-top: env(safe-area-inset-top);
+}
+
+/* Forms Polish */
+input, select, textarea {
+    border-radius: 16px !important;
+    border: 1px solid rgba(193, 201, 190, 0.5) !important;
+    transition: all 0.2s ease !important;
+}
+
+input:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 4px rgba(32, 78, 43, 0.1) !important;
+}

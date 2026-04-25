@@ -1,0 +1,11 @@
+# Windows image thumbnails
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Folder config file
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
