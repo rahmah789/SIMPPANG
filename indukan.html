@@ -35,7 +35,7 @@
                     <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-2">Berat Rata-Rata per Ekor (kg)</label>
                     <input type="number" step="0.1" id="indukan-berat" class="w-full bg-surface-container-low border-0 rounded-2xl p-4 text-sm font-black focus:ring-0" placeholder="">
                 </div>
-                <button type="button" onclick="evaluasiIndukan()" class="w-full bg-secondary text-white font-black text-xs py-4 rounded-2xl shadow-lg active:scale-95 transition-all uppercase tracking-widest mt-2 hover:bg-green-800">
+                <button type="button" id="btn-simpan" onclick="evaluasiIndukan()" class="w-full bg-white text-primary border-2 border-primary font-black text-xs py-4 rounded-2xl shadow-sm active:scale-95 transition-all uppercase tracking-widest mt-2">
                     Simpan & Evaluasi
                 </button>
             </form>
@@ -75,6 +75,23 @@
         </a>
     </nav>
     <script>
+        function checkInputs() {
+            const tgl = document.getElementById('indukan-tgl').value;
+            const jumlah = document.getElementById('indukan-jumlah').value;
+            const berat = document.getElementById('indukan-berat').value;
+            const btn = document.getElementById('btn-simpan');
+            
+            if(tgl && jumlah && berat) {
+                btn.className = "w-full bg-primary text-white border-2 border-primary font-black text-xs py-4 rounded-2xl shadow-lg active:scale-95 transition-all uppercase tracking-widest mt-2 hover:bg-green-800";
+            } else {
+                btn.className = "w-full bg-white text-primary border-2 border-primary font-black text-xs py-4 rounded-2xl shadow-sm active:scale-95 transition-all uppercase tracking-widest mt-2";
+            }
+        }
+
+        document.getElementById('indukan-tgl').addEventListener('input', checkInputs);
+        document.getElementById('indukan-jumlah').addEventListener('input', checkInputs);
+        document.getElementById('indukan-berat').addEventListener('input', checkInputs);
+
         function evaluasiIndukan() {
             const tgl = document.getElementById('indukan-tgl').value;
             const jumlah = parseInt(document.getElementById('indukan-jumlah').value) || 0;
