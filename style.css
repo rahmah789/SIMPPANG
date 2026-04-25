@@ -4,34 +4,15 @@
 */
 
 :root {
-    --primary: #059669; /* Emerald 600 */
-    --primary-fixed: #d1fae5; /* Emerald 100 */
+    --primary: #204e2b;
+    --primary-fixed: #bcefc0;
     --on-primary: #ffffff;
-    --secondary: #f59e0b; /* Amber 500 */
-    --secondary-fixed: #fef3c7; /* Amber 100 */
-    --tertiary: #3b82f6; /* Blue 500 */
-    --tertiary-fixed: #dbeafe; /* Blue 100 */
-    --background: #f8fafc; /* Slate 50 */
+    --secondary: #944925;
+    --secondary-fixed: #ffdbcd;
+    --background: #fbf9f6;
     --surface: #ffffff;
-    --outline: #e2e8f0; /* Slate 200 */
-    --glass: rgba(255, 255, 255, 0.85);
-}
-
-/* Gradient Utilities */
-.bg-gradient-primary {
-    background: linear-gradient(135deg, var(--primary) 0%, #10b981 100%);
-}
-.bg-gradient-secondary {
-    background: linear-gradient(135deg, var(--secondary) 0%, #fbbf24 100%);
-}
-.bg-gradient-tertiary {
-    background: linear-gradient(135deg, var(--tertiary) 0%, #60a5fa 100%);
-}
-.text-gradient {
-    background: linear-gradient(135deg, var(--primary) 0%, #10b981 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    --outline: #c1c9be;
+    --glass: rgba(251, 249, 246, 0.85);
 }
 
 body {
