@@ -1,252 +1,121 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>SIMPPANG - Pemasaran</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIMPPANG - Pemasaran</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-background text-on-background min-h-screen safe-p-bottom">
     <!-- Header -->
     <header class="fixed top-0 w-full z-50 glass-header flex justify-between items-center px-6 h-20">
         <div class="flex items-center gap-3">
-            <a href="index.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-sm text-primary transition-transform active:scale-95">
+            <a href="index.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-sm text-primary">
                 <span class="material-symbols-outlined font-bold">arrow_back</span>
             </a>
-            <h1 class="text-xl font-black text-gradient uppercase tracking-tighter">Pemasaran</h1>
+            <h1 class="text-xl font-black text-primary uppercase tracking-tighter">Pemasaran</h1>
         </div>
-        <button onclick="openTab()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-primary text-white shadow-premium transition-transform active:scale-95">
+        <button onclick="openTab()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-sm text-on-surface-variant">
             <span class="material-symbols-outlined">verified_user</span>
         </button>
     </header>
 
-    <main class="pt-28 px-6 max-w-5xl mx-auto animate-slide-up pb-24">
+    <main class="pt-28 px-6 max-w-5xl mx-auto animate-slide-up">
         <!-- Hero -->
-        <header class="mb-8">
+        <header class="mb-10">
             <p class="text-[10px] font-black text-secondary uppercase tracking-[0.2em] mb-2">Pasar & Penjualan</p>
-            <h2 class="text-3xl font-black text-gradient tracking-tighter leading-tight">Kelola Stok<br/>& Penjualan</h2>
+            <h2 class="text-3xl font-black text-primary tracking-tighter leading-tight">Kelola Stok<br/>& Harga Pasar</h2>
         </header>
 
-        <!-- 1. Komoditas (Telur, DOC, Indukan, Daging) -->
-        <section class="mb-10">
-            <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-sm">inventory_2</span> Komoditas
-            </h3>
-            <div class="grid grid-cols-1 gap-4">
-                <!-- Telur -->
-                <div class="app-card shadow-premium p-5 flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-yellow-50 rounded-2xl flex items-center justify-center text-2xl">🥚</div>
-                        <div>
-                            <h3 class="text-sm font-black text-on-surface uppercase tracking-tighter">Telur Ayam</h3>
-                            <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Komoditas Utama</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-2">
-                        <div class="text-right">
-                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga</label>
-                            <input type="number" id="price-telur" onchange="updateMarketing('telur')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" placeholder="Harga">
-                        </div>
-                        <div class="text-right">
-                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
-                            <input type="number" id="stock-telur" onchange="updateMarketing('telur')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" placeholder="0">
-                        </div>
+        <!-- Product Cards -->
+        <div class="grid grid-cols-1 gap-4 mb-10">
+            <!-- Telur -->
+            <div class="app-card shadow-premium p-5 flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-yellow-50 rounded-2xl flex items-center justify-center text-2xl">🥚</div>
+                    <div>
+                        <h3 class="text-sm font-black text-on-surface uppercase tracking-tighter">Telur Ayam</h3>
+                        <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Komoditas Utama</p>
                     </div>
                 </div>
-
-                <!-- DOC -->
-                <div class="app-card shadow-premium p-5 flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-primary-fixed/30 rounded-2xl flex items-center justify-center text-2xl">🐣</div>
-                        <div>
-                            <h3 class="text-sm font-black text-on-surface uppercase tracking-tighter">DOC (Bibit)</h3>
-                            <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Siklus Awal</p>
-                        </div>
+                <div class="flex gap-2">
+                    <div class="text-right">
+                        <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Butir</label>
+                        <input type="number" id="price-telur" onchange="updateMarketing('telur')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" value="2500">
                     </div>
-                    <div class="flex gap-2">
-                        <div class="text-right">
-                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga</label>
-                            <input type="number" id="price-doc" onchange="updateMarketing('doc')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" placeholder="Harga">
-                        </div>
-                        <div class="text-right">
-                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
-                            <input type="number" id="stock-doc" onchange="updateMarketing('doc')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" placeholder="0">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Indukan -->
-                <div class="app-card shadow-premium p-5 flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-secondary-fixed/50 rounded-2xl flex items-center justify-center text-2xl">🐓</div>
-                        <div>
-                            <h3 class="text-sm font-black text-on-surface uppercase tracking-tighter">Indukan</h3>
-                            <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Produksi</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-2">
-                        <div class="text-right">
-                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga</label>
-                            <input type="number" id="price-indukan" onchange="updateMarketing('indukan')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" placeholder="Harga">
-                        </div>
-                        <div class="text-right">
-                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
-                            <input type="number" id="stock-indukan" onchange="updateMarketing('indukan')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" placeholder="0">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Daging -->
-                <div class="app-card shadow-premium p-5 flex items-center justify-between border-l-4 border-red-500">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center text-2xl">🥩</div>
-                        <div>
-                            <h3 class="text-sm font-black text-on-surface uppercase tracking-tighter">Daging</h3>
-                            <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Siap Konsumsi</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-2">
-                        <div class="text-right">
-                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Kg</label>
-                            <input type="number" id="price-daging" onchange="updateMarketing('daging')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" placeholder="Harga">
-                        </div>
-                        <div class="text-right">
-                            <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok(Kg)</label>
-                            <input type="number" id="stock-daging" onchange="updateMarketing('daging')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" placeholder="0">
-                        </div>
+                    <div class="text-right">
+                        <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
+                        <input type="number" id="stock-telur" onchange="updateMarketing('telur')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" value="0">
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- 2. Transportasi -->
-        <section class="mb-10">
-            <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-secondary text-sm">local_shipping</span> Logistik & Transportasi
-            </h3>
-            <div class="grid grid-cols-2 gap-3">
-                <a href="#" class="app-card shadow-sm p-4 flex flex-col items-center justify-center text-center hover:bg-green-50 transition-colors">
-                    <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-2"><span class="material-symbols-outlined">two_wheeler</span></div>
-                    <h4 class="text-xs font-black">Grab</h4>
-                </a>
-                <a href="#" class="app-card shadow-sm p-4 flex flex-col items-center justify-center text-center hover:bg-green-50 transition-colors">
-                    <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-2"><span class="material-symbols-outlined">motorcycle</span></div>
-                    <h4 class="text-xs font-black">Gojek (Ojol)</h4>
-                </a>
-                <a href="#" class="app-card shadow-sm p-4 flex flex-col items-center justify-center text-center hover:bg-yellow-50 transition-colors">
-                    <div class="w-10 h-10 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mb-2"><span class="material-symbols-outlined">directions_car</span></div>
-                    <h4 class="text-xs font-black">Maxim</h4>
-                </a>
-                <a href="#" class="app-card shadow-sm p-4 flex flex-col items-center justify-center text-center hover:bg-blue-50 transition-colors">
-                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-2"><span class="material-symbols-outlined">local_shipping</span></div>
-                    <h4 class="text-xs font-black">Kargo Terdekat</h4>
-                </a>
-            </div>
-        </section>
-
-        <!-- 5. Promosi -->
-        <section class="mb-10">
-            <div class="bg-gradient-secondary rounded-[28px] p-6 text-white shadow-premium relative overflow-hidden">
-                <div class="absolute -right-4 -top-4 opacity-20">
-                    <span class="material-symbols-outlined text-[100px]">campaign</span>
+            <!-- DOC -->
+            <div class="app-card shadow-premium p-5 flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-primary-fixed/30 rounded-2xl flex items-center justify-center text-2xl">🐣</div>
+                    <div>
+                        <h3 class="text-sm font-black text-on-surface uppercase tracking-tighter">DOC (Bibit)</h3>
+                        <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Siklus Awal</p>
+                    </div>
                 </div>
-                <h3 class="text-lg font-black uppercase tracking-tighter mb-1 relative z-10">Buat Promosi Baru</h3>
-                <p class="text-xs font-medium mb-4 relative z-10">Tawarkan diskon untuk pembelian dalam jumlah besar.</p>
-                <button class="bg-white text-secondary font-black text-xs px-5 py-2.5 rounded-full shadow-sm hover:scale-105 transition-transform relative z-10">
-                    + Buat Promo
-                </button>
+                <div class="flex gap-2">
+                    <div class="text-right">
+                        <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Ekor</label>
+                        <input type="number" id="price-doc" onchange="updateMarketing('doc')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" value="8500">
+                    </div>
+                    <div class="text-right">
+                        <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
+                        <input type="number" id="stock-doc" onchange="updateMarketing('doc')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" value="0">
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <!-- 3. Social Media Section -->
+            <!-- Indukan -->
+            <div class="app-card shadow-premium p-5 flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-secondary-fixed/50 rounded-2xl flex items-center justify-center text-2xl">🐓</div>
+                    <div>
+                        <h3 class="text-sm font-black text-on-surface uppercase tracking-tighter">Indukan</h3>
+                        <p class="text-[9px] font-bold text-on-surface-variant uppercase opacity-60">Produksi</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="text-right">
+                        <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Harga/Ekor</label>
+                        <input type="number" id="price-indukan" onchange="updateMarketing('indukan')" class="w-20 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-primary text-right" value="75000">
+                    </div>
+                    <div class="text-right">
+                        <label class="block text-[8px] font-black text-on-surface-variant uppercase mb-1">Stok</label>
+                        <input type="number" id="stock-indukan" onchange="updateMarketing('indukan')" class="w-14 bg-surface-container-low border-0 rounded-lg p-2 text-xs font-black text-on-surface text-right" value="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
         <section class="mb-12">
-            <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-sm">hub</span> Komunitas & Sosmed
+            <h3 class="text-xs font-black text-on-surface uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-sm">share</span> Link Komunitas
             </h3>
             <div class="grid grid-cols-2 gap-3">
                 <div class="app-card p-4 flex flex-col gap-2">
-                    <p class="text-[9px] font-black text-green-500 uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">forum</span> WhatsApp</p>
-                    <input type="text" id="link-wa" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold" placeholder="Link WA Group">
+                    <p class="text-[8px] font-black text-pink-500 uppercase">Instagram</p>
+                    <input type="text" id="link-ig" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold">
                 </div>
                 <div class="app-card p-4 flex flex-col gap-2">
-                    <p class="text-[9px] font-black text-blue-600 uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">groups</span> Facebook</p>
-                    <input type="text" id="link-fb" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold" placeholder="Link FB Group">
-                </div>
-                <div class="app-card p-4 flex flex-col gap-2">
-                    <p class="text-[9px] font-black text-pink-500 uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">photo_camera</span> Instagram</p>
-                    <input type="text" id="link-ig" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold" placeholder="Username IG">
-                </div>
-                <div class="app-card p-4 flex flex-col gap-2">
-                    <p class="text-[9px] font-black text-black uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">music_note</span> TikTok</p>
-                    <input type="text" id="link-tiktok" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold" placeholder="Username TikTok">
+                    <p class="text-[8px] font-black text-blue-600 uppercase">WhatsApp</p>
+                    <input type="text" id="link-wa" onchange="updateLinks()" class="w-full bg-surface-container-low border-0 rounded-xl p-3 text-[10px] font-bold">
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 4. Modal Pembayaran & Identitas -->
-    <div id="modal-pembayaran" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm hidden flex items-end sm:items-center justify-center transition-opacity">
-        <div class="bg-surface w-full sm:w-96 rounded-t-[32px] sm:rounded-[32px] p-6 shadow-premium transform transition-transform animate-slide-up h-[85vh] overflow-y-auto no-scrollbar">
-            <div class="flex justify-between items-center mb-6">
-                <div>
-                    <h3 class="text-xl font-black text-primary tracking-tighter">Profil & Pembayaran</h3>
-                    <p class="text-[10px] text-on-surface-variant font-bold uppercase">Verifikasi Penjual</p>
-                </div>
-                <button onclick="closeModal()" class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded-full text-on-surface-variant hover:bg-red-100 hover:text-red-600 transition-colors">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            
-            <form id="form-seller" class="space-y-4">
-                <!-- Identitas -->
-                <div class="space-y-3 border-b border-outline/20 pb-4">
-                    <h4 class="text-xs font-black uppercase tracking-widest text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">badge</span> Identitas Toko</h4>
-                    <div>
-                        <label class="block text-[10px] font-bold text-on-surface-variant mb-1">Nama Peternak / Toko</label>
-                        <input type="text" id="seller-name" class="w-full p-3 rounded-xl border border-outline/50 text-sm font-bold bg-background focus:ring-2 focus:ring-primary focus:border-primary" required>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold text-on-surface-variant mb-1">Alamat Lengkap (Patokan)</label>
-                        <textarea id="seller-address" rows="2" class="w-full p-3 rounded-xl border border-outline/50 text-sm font-bold bg-background focus:ring-2 focus:ring-primary focus:border-primary" required></textarea>
-                    </div>
-                </div>
-
-                <!-- Kontak & Rekening -->
-                <div class="space-y-3 border-b border-outline/20 pb-4">
-                    <h4 class="text-xs font-black uppercase tracking-widest text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">account_balance_wallet</span> Kontak & Rekening</h4>
-                    <div>
-                        <label class="block text-[10px] font-bold text-on-surface-variant mb-1">Nomor HP / WhatsApp Pembeli & Penjual</label>
-                        <input type="tel" id="seller-phone" class="w-full p-3 rounded-xl border border-outline/50 text-sm font-bold bg-background focus:ring-2 focus:ring-primary focus:border-primary">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold text-on-surface-variant mb-1">Bank & No. Rekening</label>
-                        <input type="text" id="seller-bank" placeholder="BCA 123456789 a.n Budi" class="w-full p-3 rounded-xl border border-outline/50 text-sm font-bold bg-background focus:ring-2 focus:ring-primary focus:border-primary">
-                    </div>
-                </div>
-
-                <!-- Verifikasi -->
-                <div class="bg-primary-fixed/30 rounded-2xl p-4 flex items-center gap-3">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0">
-                        <span class="material-symbols-outlined">verified</span>
-                    </div>
-                    <div>
-                        <p class="text-xs font-black text-primary uppercase">Toko Terverifikasi</p>
-                        <p class="text-[10px] text-on-surface-variant">Dengan menyimpan data ini, toko Anda otomatis terverifikasi di SIMPPANG.</p>
-                    </div>
-                </div>
-
-                <button type="submit" class="w-full py-4 bg-gradient-primary text-white rounded-2xl font-black uppercase tracking-widest shadow-premium hover:opacity-90 active:scale-95 transition-all mt-4">
-                    Simpan Profil
-                </button>
-            </form>
-        </div>
-    </div>
-
     <!-- Global Nav -->
-    <nav class="fixed bottom-0 left-0 w-full z-40 glass-nav flex justify-around items-center px-4 pb-8 pt-4">
+    <nav class="fixed bottom-0 left-0 w-full z-50 glass-nav flex justify-around items-center px-4 pb-8 pt-4">
         <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="index.html">
             <span class="material-symbols-outlined text-[24px]">home</span>
             <span class="text-[10px] font-black uppercase tracking-tighter">Beranda</span>
@@ -268,6 +137,8 @@
             <span class="text-[10px] font-black uppercase tracking-tighter">AI</span>
         </a>
     </nav>
+</a>
+</nav>
 
 <script>
     // Marketing Data Logic
@@ -281,10 +152,8 @@
         // Load Stock/Price
         types.forEach(t => {
             if(data[t]) {
-                const pEl = document.getElementById(`price-${t}`);
-                const sEl = document.getElementById(`stock-${t}`);
-                if (pEl) pEl.value = data[t].price;
-                if (sEl) sEl.value = data[t].stock;
+                document.getElementById(`price-${t}`).value = data[t].price;
+                document.getElementById(`stock-${t}`).value = data[t].stock;
             }
         });
 
@@ -297,7 +166,6 @@
         // Load Seller
         document.getElementById('seller-name').value = seller.name || '';
         document.getElementById('seller-address').value = seller.address || '';
-        document.getElementById('seller-phone').value = seller.phone || '';
         document.getElementById('seller-bank').value = seller.bank || '';
     }
 
@@ -325,18 +193,16 @@
         const seller = {
             name: document.getElementById('seller-name').value,
             address: document.getElementById('seller-address').value,
-            phone: document.getElementById('seller-phone').value,
             bank: document.getElementById('seller-bank').value
         };
         localStorage.setItem('simppang_seller', JSON.stringify(seller));
-        alert("Profil dan verifikasi berhasil disimpan!");
         closeModal();
     }
 
-    function openTab() { document.getElementById('modal-pembayaran').classList.remove('hidden'); }
+    function openTab(id) { document.getElementById('modal-pembayaran').classList.remove('hidden'); }
     function closeModal() { document.getElementById('modal-pembayaran').classList.add('hidden'); }
 
     loadMarketing();
 </script>
-</body>
-</html>
+</body></html>
+</body></html>
