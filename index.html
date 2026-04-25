@@ -18,15 +18,15 @@
             </div>
             <div>
                 <span class="text-2xl font-black tracking-tighter text-primary block leading-none">SIMPPANG</span>
-                <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest opacity-60">Smart Farming</span>
+                <span class="text-[8px] font-bold text-on-surface-variant uppercase tracking-wider opacity-80 leading-tight block mt-1">Sistem Manajemen Pemeliharaan<br/>dan Pemasaran Ayam Kampung</span>
             </div>
         </div>
         <div class="flex gap-3">
             <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-sm text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-all active:scale-90">
                 <span class="material-symbols-outlined">notifications</span>
             </button>
-            <a href="panel.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-white shadow-premium hover:opacity-90 transition-all active:scale-90">
-                <span class="material-symbols-outlined">settings_accessibility</span>
+            <a href="panel.html" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface border-2 border-primary text-primary shadow-lg hover:bg-primary hover:text-white transition-all active:scale-90">
+                <span class="material-symbols-outlined font-bold">person</span>
             </a>
         </div>
     </header>
@@ -36,7 +36,8 @@
         <section class="mb-10">
             <p class="text-[10px] font-black text-secondary uppercase tracking-[0.2em] mb-2">Dashboard Utama</p>
             <h1 class="text-4xl font-black text-primary tracking-tighter leading-tight">Halo,<br/>Peternak Belitang!</h1>
-            <div class="h-1 w-12 bg-secondary mt-4 rounded-full"></div>
+            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed max-w-lg font-medium">Selamat datang di SIMPPANG. Aplikasi ini dirancang agar peternak pemula dapat dengan mudah memahami, mencatat pemeliharaan, serta memantau keuangan dan pemasaran secara teratur.</p>
+            <div class="h-1 w-12 bg-secondary mt-5 rounded-full"></div>
         </section>
 
         <!-- Dynamic Summary Grid -->
@@ -44,9 +45,6 @@
             <div class="app-card shadow-premium p-5 relative overflow-hidden">
                 <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Populasi</p>
                 <h3 class="text-2xl font-black text-on-surface tracking-tighter">1.250 <span class="text-[10px] opacity-40 font-bold uppercase ml-1">Ekor</span></h3>
-                <div class="absolute -right-3 -bottom-3 text-primary/5">
-                    <span class="material-symbols-outlined text-[64px]">agriculture</span>
-                </div>
             </div>
             <div class="app-card shadow-premium p-5 relative overflow-hidden">
                 <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Keuangan</p>
@@ -58,10 +56,10 @@
                 <h3 id="home-stock" class="text-2xl font-black text-secondary tracking-tighter">0</h3>
                 <p class="text-[9px] font-bold text-secondary/40 uppercase">Stok Siap Jual</p>
             </div>
-            <div class="bg-primary text-white p-5 rounded-[28px] shadow-premium relative overflow-hidden">
-                <p class="text-[10px] font-bold text-white/60 uppercase tracking-widest mb-1">HPP Real</p>
-                <h3 id="home-hpp" class="text-xl font-black tracking-tighter">Rp 0</h3>
-                <div class="absolute -right-3 -bottom-3 opacity-10">
+            <div class="app-card shadow-premium p-5 relative overflow-hidden border-primary/30">
+                <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">HPP Real</p>
+                <h3 id="home-hpp" class="text-xl font-black text-primary tracking-tighter">Rp 0</h3>
+                <div class="absolute -right-3 -bottom-3 opacity-10 text-primary">
                     <span class="material-symbols-outlined text-[64px]">calculate</span>
                 </div>
             </div>
@@ -117,9 +115,9 @@
                     <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl backdrop-blur-md">🤖</div>
                     <div class="bg-white/20 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest backdrop-blur-md">Si-Pang AI</div>
                 </div>
-                <div class="text-white z-10">
-                    <h3 class="text-2xl font-black uppercase tracking-tighter">Asisten AI</h3>
-                    <p class="text-xs opacity-70 font-medium mt-1 italic">Tanya solusi masalah kandang sekarang.</p>
+                <div class="z-10">
+                    <h3 class="text-2xl font-black text-black uppercase tracking-tighter">Asisten AI</h3>
+                    <p class="text-xs text-white opacity-90 font-normal mt-1 italic">Tanya solusi masalah kandang sekarang.</p>
                 </div>
             </a>
         </div>
@@ -142,15 +140,15 @@
         </a>
         <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="farming.html">
             <span class="material-symbols-outlined text-[24px]">agriculture</span>
-            <span class="text-[10px] font-black uppercase tracking-tighter">Ternak</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Pemeliharaan</span>
         </a>
         <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="financials.html">
             <span class="material-symbols-outlined text-[24px]">payments</span>
-            <span class="text-[10px] font-black uppercase tracking-tighter">Uang</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Keuangan</span>
         </a>
         <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="marketing.html">
             <span class="material-symbols-outlined text-[24px]">storefront</span>
-            <span class="text-[10px] font-black uppercase tracking-tighter">Pasar</span>
+            <span class="text-[10px] font-black uppercase tracking-tighter">Pemasaran</span>
         </a>
         <a class="nav-item flex flex-col items-center justify-center gap-1 text-on-surface-variant" href="asisten.html">
             <span class="material-symbols-outlined text-[24px]">smart_toy</span>
